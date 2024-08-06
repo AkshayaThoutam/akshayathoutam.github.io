@@ -39,6 +39,7 @@ body.light-mode main {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
     z-index: 1000;
+    overflow-y: auto; /* Ensure sidebar is scrollable */
 }
 
 body.light-mode .sidebar {
@@ -143,6 +144,7 @@ main {
     margin-left: 200px; /* Match the sidebar width */
     padding: 20px;
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .publication-year {
