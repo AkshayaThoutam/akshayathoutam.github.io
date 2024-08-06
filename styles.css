@@ -140,7 +140,7 @@ body.light-mode .sidebar nav ul li a.active {
 
 main {
     flex-grow: 1;
-    margin-left: 200px; /* Match the sidebar width */
+    margin-left: 220px; /* Increased the left margin */
     padding: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -185,4 +185,3 @@ main {
         margin-left: 0;
     }
 }
-
