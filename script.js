@@ -1,19 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const modeToggle = document.getElementById('mode-toggle');
+document.addEventListener('DOMContentLoaded', (event) => {
+    const toggleButton = document.getElementById('mode-toggle');
+    const body = document.body;
     const currentMode = localStorage.getItem('mode') || 'light';
 
-    document.body.classList.toggle('dark-mode', currentMode === 'dark');
+    if (currentMode === 'dark') {
+        body.classList.add('dark-mode');
+    }
 
-    modeToggle.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        const newMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-        localStorage.setItem('mode', newMode);
-    });
-
-    const links = document.querySelectorAll('nav ul li a');
-    links.forEach(link => {
-        if (link.href === window.location.href) {
-            link.classList.add('active');
-        }
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const mode = body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('mode', mode);
     });
 });
