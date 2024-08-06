@@ -3,16 +3,15 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
     background-color: #121212;
     color: #ffffff;
 }
 
-.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-.light-mode {
+body.light-mode {
     background-color: #f0f0f0;
     color: #000000;
 }
@@ -28,6 +27,12 @@ body {
     position: fixed;
     height: 100vh;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode .sidebar {
+    background-color: #f8f9fa;
+    color: #000000;
 }
 
 .sidebar .profile {
@@ -57,16 +62,25 @@ body {
 
 .sidebar nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: inherit;
     display: block;
     padding: 10px;
     background-color: #333;
     border-radius: 5px;
     text-align: center;
+    transition: background-color 0.3s;
+}
+
+body.light-mode .sidebar nav ul li a {
+    background-color: #e9ecef;
 }
 
 .sidebar nav ul li a:hover {
     background-color: #444;
+}
+
+body.light-mode .sidebar nav ul li a:hover {
+    background-color: #dee2e6;
 }
 
 .social-icons {
@@ -78,7 +92,7 @@ body {
 }
 
 .social-icons .icon {
-    color: #ffffff;
+    color: inherit;
     font-size: 24px;
     margin: 10px;
     cursor: pointer;
@@ -92,8 +106,7 @@ main {
     flex-grow: 1;
     padding: 20px;
     margin-left: 270px;
-    background-color: inherit;
-    color: inherit;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h2 {

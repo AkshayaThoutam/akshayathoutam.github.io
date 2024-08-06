@@ -5,10 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check for saved theme preference
     if (localStorage.getItem('theme') === 'light') {
         body.classList.add('light-mode');
-        body.classList.remove('dark-mode');
     } else {
         body.classList.add('dark-mode');
-        body.classList.remove('light-mode');
     }
 
     toggleIcon.addEventListener('click', () => {
