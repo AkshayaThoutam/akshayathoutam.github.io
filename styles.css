@@ -68,7 +68,7 @@ nav ul li a.active {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
-    padding-bottom: 20px; /* Added padding-bottom to ensure the icons are visible */
+    margin-top: auto; /* Ensures the icons are at the bottom */
 }
 
 .nav-bottom-icons a {
