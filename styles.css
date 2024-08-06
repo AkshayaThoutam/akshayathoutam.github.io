@@ -67,12 +67,21 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
+.nav-bottom-icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.nav-bottom-icons a {
+    color: #e0e0e0;
+}
+
 nav button#mode-toggle {
     background: none;
     border: none;
     color: #e0e0e0;
     cursor: pointer;
-    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,16 +95,6 @@ main {
 
 .dark-mode main {
     background-color: #2a2a2a;
-    color: #e0e0e0;
-}
-
-.nav-bottom-icons {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-}
-
-.nav-bottom-icons a {
     color: #e0e0e0;
 }
 
