@@ -8,160 +8,6 @@
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Nunito Sans', sans-serif;
-        }
-
-        .menu-toggle {
-            display: none;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 250px;
-            background-color: #333;
-            padding-top: 20px;
-            transition: width 0.3s;
-        }
-
-        .sidebar.show {
-            width: 250px;
-        }
-
-        .sidebar-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .profile {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .profile-pic {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
-
-        .profile h1 {
-            margin: 10px 0 5px;
-            color: #fff;
-        }
-
-        .profile p {
-            margin: 0;
-            color: #999;
-            font-style: italic;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 10px 0;
-        }
-
-        nav ul li a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active {
-            background-color: #555;
-            color: #fff;
-        }
-
-        nav ul li a i {
-            margin-right: 10px;
-        }
-
-        .social-icons {
-            position: absolute;
-            bottom: 20px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .social-icons .icon {
-            color: #ccc;
-            margin: 0 10px;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        .social-icons .icon:hover {
-            color: #fff;
-        }
-
-        main {
-            margin-left: 250px;
-            padding: 20px;
-            overflow: auto;
-        }
-
-        .publication-year {
-            font-size: 24px;
-            margin-top: 20px;
-            color: #999;
-        }
-
-        .publications-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .publications-list li {
-            margin-bottom: 10px;
-            color: #ccc;
-        }
-
-        .publications-list li strong {
-            color: teal;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                font-size: 24px;
-                color: #fff;
-                cursor: pointer;
-            }
-
-            .sidebar {
-                width: 0;
-                overflow: hidden;
-            }
-
-            .sidebar.show {
-                width: 250px;
-            }
-
-            main {
-                margin-left: 0;
-                padding: 20px;
-            }
-        }
-    </style>
 </head>
 <body class="light-mode">
     <div class="menu-toggle">MENU</div>
@@ -195,43 +41,43 @@
         <div class="publication-year">2023</div>
         <ul class="publications-list">
             <li>
-                <strong>Greg Gibson, Dermot McGovern, <span style="color: teal;">Akshaya Thoutam</span>, the NIDDK IBD Genetics Consortium, Judy Cho and John Rioux.</strong> Eleven Grand Challenges for Inflammatory Bowel Disease Genetics and Genomics. Manuscript pending review at Journal Gut
+                <strong>Greg Gibson, Dermot McGovern, <span style="color: teal; font-weight: bold;">Akshaya Thoutam</span>, the NIDDK IBD Genetics Consortium, Judy Cho and John Rioux.</strong> Eleven Grand Challenges for Inflammatory Bowel Disease Genetics and Genomics. Manuscript pending review at Journal Gut
             </li>
             <li>
-                <strong><span style="color: teal;">Akshaya Thoutam</span>, Greg & Gibson (2023, April).</strong> Pan-cancer atlas of tumor-infiltrating B cells. Oral presentation at the Georgia Institute of Technology Undergraduate Research Symposium.
+                <strong><span style="color: teal; font-weight: bold;">Akshaya Thoutam</span>, Greg & Gibson (2023, April).</strong> Pan-cancer atlas of tumor-infiltrating B cells. Oral presentation at the Georgia Institute of Technology Undergraduate Research Symposium.
             </li>
             <li>
-                <strong>Hira Anis, <span style="color: teal;">Akshaya Thoutam</span>, Makeda Hailu, Vishal Dhere, Greg Gibson, Erin Connolly (2023, April)</strong> Single- cell Pan-cancer atlas reveals diversity and plasticity of tumor-infiltrating plasma cells. Poster presentation at Atlanta Workshop for Single Cell Omics 2023
+                <strong>Hira Anis, <span style="color: teal; font-weight: bold;">Akshaya Thoutam</span>, Makeda Hailu, Vishal Dhere, Greg Gibson, Erin Connolly (2023, April)</strong> Single- cell Pan-cancer atlas reveals diversity and plasticity of tumor-infiltrating plasma cells. Poster presentation at Atlanta Workshop for Single Cell Omics 2023
             </li>
             <li>
-                <strong>William Watson, <span style="color: teal;">Akshaya Thoutam</span>, Mohan William, Regina Nwosu (April 2023).</strong> 5HT2c against lorcaserin on spontaneous nerve root 3 activity in crayfish model. Poster at 2023 Georgia Tech Undergraduate Neuroscience Symposium.
+                <strong>William Watson, <span style="color: teal; font-weight: bold;">Akshaya Thoutam</span>, Mohan William, Regina Nwosu (April 2023).</strong> 5HT2c against lorcaserin on spontaneous nerve root 3 activity in crayfish model. Poster at 2023 Georgia Tech Undergraduate Neuroscience Symposium.
             </li>
         </ul>
 
         <div class="publication-year">2022</div>
         <ul class="publications-list">
             <li>
-                <strong><span style="color: teal;">Akshaya Thoutam</span>, Erin Connolly, Greg Gibson (2022, April).</strong> A Pan-cancer Single-cell Transcriptional Atlas of Tumor-infiltrating Plasma Cells. Poster presented at the Atlanta Workshop for Single Cell Omics 2022.
+                <strong><span style="color: teal; font-weight: bold;">Akshaya Thoutam</span>, Erin Connolly, Greg Gibson (2022, April).</strong> A Pan-cancer Single-cell Transcriptional Atlas of Tumor-infiltrating Plasma Cells. Poster presented at the Atlanta Workshop for Single Cell Omics 2022.
             </li>
             <li>
-                <strong><span style="color: teal;">Akshaya Thoutam</span> & Greg Gibson (2022, October).</strong> A Pan-cancer single-cell transcriptional atlas of tumor- infiltrating B cells. Poster presented at the National Symposium for Undergraduate Research. (52/352 selected)
+                <strong><span style="color: teal; font-weight: bold;">Akshaya Thoutam</span> & Greg Gibson (2022, October).</strong> A Pan-cancer single-cell transcriptional atlas of tumor- infiltrating B cells. Poster presented at the National Symposium for Undergraduate Research. (52/352 selected)
             </li>
         </ul>
 
         <div class="publication-year">2021</div>
         <ul class="publications-list">
             <li>
-                <strong><span style="color: teal;">Akshaya Thoutam</span>, Narasiah & Kolliputi (2021).</strong> Epigenetics of pulmonary diseases. In T. Tollefsbol (Ed.), Medical Epigenetics (2nd ed., pp. 45-67). Publisher. ISBN: 9780128239285
+                <strong><span style="color: teal; font-weight: bold;">Akshaya Thoutam</span>, Narasiah & Kolliputi (2021).</strong> Epigenetics of pulmonary diseases. In T. Tollefsbol (Ed.), Medical Epigenetics (2nd ed., pp. 45-67). Publisher. ISBN: 9780128239285
             </li>
             <li>
-                <strong>Nasrin Hooshmand, <span style="color: teal;">Akshaya Thoutam</span>, Max Anikovskiy, Hagar Labouta & Mostafa El-Sayed (2021).</strong> Localized Surface Plasmon Resonance as a Tool to Study Protein Corona Formation on Nanoparticles. Journal of Physical Chemistry C, 125(45), 24765–24776
+                <strong>Nasrin Hooshmand, <span style="color: teal; font-weight: bold;">Akshaya Thoutam</span>, Max Anikovskiy, Hagar Labouta & Mostafa El-Sayed (2021).</strong> Localized Surface Plasmon Resonance as a Tool to Study Protein Corona Formation on Nanoparticles. Journal of Physical Chemistry C, 125(45), 24765–24776
             </li>
         </ul>
 
         <div class="publication-year">2020</div>
         <ul class="publications-list">
             <li>
-                <strong><span style="color: teal;">Akshaya Thoutam</span>, Mason Breitzig, Richard Lockey & Narasiah Kolliputi (2020).</strong> Coronavirus: a shift in focus away from IFN response and towards other inflammatory targets. Journal of cell communication and signaling, 1–2.
+                <strong><span style="color: teal; font-weight: bold;">Akshaya Thoutam</span>, Mason Breitzig, Richard Lockey & Narasiah Kolliputi (2020).</strong> Coronavirus: a shift in focus away from IFN response and towards other inflammatory targets. Journal of cell communication and signaling, 1–2.
             </li>
         </ul>
     </main>
