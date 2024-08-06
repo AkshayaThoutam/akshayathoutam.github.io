@@ -69,16 +69,25 @@ body {
     background-color: #444;
 }
 
-.toggle-container {
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
     margin-top: auto;
 }
 
-.toggle-container input {
-    margin-right: 5px;
+.social-icons .icon {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 10px;
 }
 
-.toggle-container label {
-    cursor: pointer;
+.social-icons .icon:hover {
+    color: #888;
+}
+
+.toggle-container {
+    display: none; /* Hide the original toggle container */
 }
 
 main {
