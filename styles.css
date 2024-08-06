@@ -16,8 +16,18 @@ body.light-mode {
     color: #000000;
 }
 
+body.dark-mode main {
+    background-color: #333333; /* Change this to your preferred grey color */
+    color: #ffffff;
+}
+
+body.light-mode main {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 .sidebar {
-    width: 250px;
+    width: 200px; /* Reduced the width */
     background-color: #2c2c2c;
     color: #b0b0b0;
     padding: 20px;
@@ -57,6 +67,10 @@ body.light-mode .sidebar {
     margin-bottom: 10px;
 }
 
+.sidebar .profile p {
+    font-style: italic; /* Italicize the text */
+}
+
 .sidebar nav ul {
     list-style-type: none;
     padding: 0;
@@ -71,11 +85,17 @@ body.light-mode .sidebar {
 .sidebar nav ul li a {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 10px;
-    text-align: center;
+    text-align: left;
     border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
+    font-weight: bold; /* Make text bold */
+}
+
+.sidebar nav ul li a i {
+    margin-right: 10px; /* Space between icon and text */
 }
 
 .sidebar nav ul li a:hover,
@@ -111,7 +131,7 @@ body.light-mode .sidebar nav ul li a.active {
 main {
     flex-grow: 1;
     padding: 20px;
-    margin-left: 270px;
+    margin-left: 220px; /* Adjusted for reduced sidebar width */
     transition: background-color 0.3s, color 0.3s;
 }
 
