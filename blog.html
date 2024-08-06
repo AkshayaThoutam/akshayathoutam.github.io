@@ -6,39 +6,26 @@
     <title>Blog</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="light-mode">
-    <div class="menu-toggle">MENU</div>
-    <aside class="sidebar show">
-        <div class="sidebar-content">
-            <div class="profile">
-                <img src="./images/profile.jpg" alt="Profile Picture" class="profile-pic">
-                <h1>Akshaya Thoutam</h1>
-                <p>BioML Predoctoral RA @ Microsoft Research</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
-                    <li><a href="publications.html"><i class="fas fa-book"></i> PUBLICATIONS</a></li>
-                    <li><a href="experience.html"><i class="fas fa-briefcase"></i> EXPERIENCE</a></li>
-                    <li><a href="blog.html" class="active"><i class="fas fa-blog"></i> BLOG</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
-                </ul>
-            </nav>
+<body>
+    <nav>
+        <div class="profile-info">
+            <img src="./images/profile.jpg" alt="Profile Picture" class="profile-picture">
+            <h1>Akshaya Thoutam</h1>
+            <p>BioML Predoctoral RA @ Microsoft Research</p>
         </div>
-        <div class="social-icons">
-            <a href="mailto:akshayathoutam@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/AkshayaThoutam" class="icon" target="_blank"><i class="fab fa-github"></i></a>
-            <div class="icon" id="mode-toggle">
-                <i class="fas fa-adjust"></i>
-            </div>
-        </div>
-    </aside>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="publications.html"><i class="fas fa-book"></i> PUBLICATIONS</a></li>
+            <li><a href="experience.html"><i class="fas fa-briefcase"></i> EXPERIENCE</a></li>
+            <li><a href="blog.html" class="active"><i class="fas fa-blog"></i> BLOG</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+        </ul>
+        <button id="mode-toggle"><i class="fas fa-adjust"></i></button>
+    </nav>
     <main>
         <h2>Blog</h2>
-        <p>Blog content goes here...</p>
+        <p>Content of the blog goes here...</p>
     </main>
 </body>
 </html>
