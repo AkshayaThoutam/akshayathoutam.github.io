@@ -39,6 +39,9 @@ nav ul {
     list-style-type: none;
     padding: 0;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 nav ul li {
@@ -61,7 +64,7 @@ nav ul li a i {
 nav ul li a:hover,
 nav ul li a.active {
     background-color: #444;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 nav button#mode-toggle {
@@ -112,5 +115,24 @@ main {
 
     nav ul li {
         padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        width: 150px;
+    }
+
+    main {
+        margin-left: 150px;
+    }
+
+    .profile-picture {
+        width: 60px;
+        height: 60px;
+    }
+
+    nav ul li {
+        padding: 8px 10px;
     }
 }
