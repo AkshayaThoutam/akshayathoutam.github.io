@@ -20,12 +20,12 @@
         }
         .button-container {
             display: inline-block;
-            margin-left: 10px; /* Space between text and button */
+            margin-left: 8px; /* Space between text and button */
         }
         .button-container button {
             background-color: transparent;
-            border: 1px solid white; /* White outline */
-            color: white;
+            border: 1px solid white; /* White outline for dark mode */
+            color: white; /* White text for dark mode */
             padding: 1px 3px; /* Adjusted padding for smaller size */
             text-align: center;
             text-decoration: none;
@@ -34,6 +34,10 @@
             margin: 0 2px; /* Adjusted margin for smaller spacing */
             cursor: pointer;
             border-radius: 3px; /* Smaller border radius */
+        }
+        body.light-mode .button-container button {
+            border: 1px solid black; /* Black outline for light mode */
+            color: black; /* Black text for light mode */
         }
     </style>
 </head>
