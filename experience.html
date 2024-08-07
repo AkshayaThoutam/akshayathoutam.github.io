@@ -32,7 +32,7 @@
             padding: 10px 20px;
             position: relative;
             background-color: inherit;
-            width: 75%;
+            width: 70%;
             left: 25%;
         }
 
@@ -51,9 +51,18 @@
 
         .content {
             padding: 15px 20px;
-            background-color: white;
             position: relative;
             border-radius: 6px;
+        }
+
+        body.dark-mode .content {
+            background-color: #2b2b2b; /* Dark grey in dark mode */
+            color: #b0b0b0; /* Light grey text in dark mode */
+        }
+
+        body.light-mode .content {
+            background-color: #e0e0e0; /* Light grey in light mode */
+            color: #000000; /* Black text in light mode */
         }
 
         .date {
