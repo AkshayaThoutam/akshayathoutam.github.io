@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .pdf-container {
-            width: 100%;
-            height: 600px;
+            width: 60%; /* Adjusted width for a narrower view */
+            height: 800px; /* Increased height for a more vertical view */
             border: 1px solid #b0b0b0;
             overflow: auto;
+            margin: 0 auto; /* Center the PDF container */
         }
         .pdf-container iframe {
             width: 100%;
@@ -51,7 +52,7 @@
     <main>
         <h2>Curriculum Vitae</h2>
         <div class="pdf-container">
-            <iframe src="./images/compbio_resume.pdf" type="application/pdf"></iframe>
+            <iframe src="your-pdf-file.pdf" type="application/pdf"></iframe>
         </div>
     </main>
 </body>
