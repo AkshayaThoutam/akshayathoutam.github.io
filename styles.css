@@ -1,9 +1,12 @@
+/* Existing CSS code */
+
 body {
     margin: 0;
     font-family: 'Nunito Sans', Arial, sans-serif;
     display: flex;
     min-height: 100vh;
     transition: background-color 0.3s, color 0.3s;
+    font-size: 1vw; /* Added vw-based font size */
 }
 
 body.dark-mode {
@@ -39,6 +42,7 @@ body.light-mode main {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
     z-index: 1000;
+    font-size: 1vw; /* Added vw-based font size */
 }
 
 body.light-mode .sidebar {
@@ -95,6 +99,7 @@ body.light-mode .sidebar {
     font-weight: bold; /* Make text bold */
     text-transform: uppercase; /* Make text uppercase */
     font-family: 'Nunito Sans', Arial, sans-serif; /* Set font to Nunito Sans */
+    font-size: 1vw; /* Added vw-based font size */
 }
 
 .sidebar nav ul li a i {
@@ -122,7 +127,7 @@ body.light-mode .sidebar nav ul li a.active {
 
 .social-icons .icon {
     color: inherit;
-    font-size: 24px;
+    font-size: 2.4vw; /* Adjusted to use viewport width for icon size */
     margin: 10px;
     transition: color 0.3s;
 }
@@ -133,7 +138,7 @@ body.light-mode .sidebar nav ul li a.active {
 
 .menu-toggle {
     display: none;
-    font-size: 24px;
+    font-size: 2.4vw; /* Adjusted to use viewport width for font size */
     cursor: pointer;
     padding: 10px;
 }
@@ -143,10 +148,11 @@ main {
     margin-left: 250px; /* Increased the left margin */
     padding: 20px;
     transition: background-color 0.3s, color 0.3s;
+    font-size: 1vw; /* Added vw-based font size */
 }
 
 .publication-year {
-    font-size: 1.5em;
+    font-size: 1.5vw; /* Adjusted to use viewport width for font size */
     margin-top: 20px;
     border-bottom: 2px solid #444;
     padding-bottom: 5px;
@@ -159,6 +165,35 @@ main {
 
 .publications-list li {
     margin: 15px 0;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 800px) {
+    .sidebar, .main, .right { /* Adjust the elements as per your layout */
+        width: 100%; /* Set width to 100% when viewport is 800px or smaller */
+    }
+
+    main {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+
+    .sidebar {
+        position: relative;
+        height: auto;
+    }
+
+    .sidebar-content {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar.show {
+        display: block;
+    }
 }
 
 @media (max-width: 768px) {
