@@ -291,9 +291,13 @@ body.light-mode .content {
     }
 
     .date {
-        left: 50px;
-        top: -10px; /* Move date above the content */
-        font-size: 1em; /* Increase font size */
+        left: 50px; /* Adjust for better positioning */
+        top: -10px; /* Move date above the timeline content for better visibility */
+        font-size: 1em; /* Increase font size for readability */
+        color: #ffffff; /* Change color for better contrast */
+        background-color: #444; /* Add background color for better visibility */
+        padding: 2px 5px; /* Add padding around the text */
+        border-radius: 4px; /* Round corners */
     }
 
     .content {
