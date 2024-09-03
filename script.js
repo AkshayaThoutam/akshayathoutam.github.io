@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuToggle.addEventListener('click', function() {
         sidebar.classList.toggle('show');
+        sidebar.scrollTop = 0; // Reset scroll position to the top whenever sidebar is toggled
     });
 
     const modeToggle = document.getElementById('mode-toggle');
@@ -53,4 +54,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-

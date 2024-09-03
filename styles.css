@@ -39,6 +39,7 @@ body.light-mode main {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
     z-index: 1000;
+    overflow-y: auto; /* Ensure sidebar is scrollable if content exceeds screen height */
 }
 
 body.light-mode .sidebar {
@@ -176,8 +177,10 @@ main {
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
-        height: auto;
-        position: relative;
+        height: 100vh; /* Ensure sidebar covers the full viewport height */
+        position: fixed; /* Keep sidebar fixed */
+        top: 0; /* Align sidebar to the top */
+        overflow-y: auto; /* Make sidebar scrollable */
         display: none; /* Hide sidebar by default on mobile */
     }
 
@@ -228,7 +231,7 @@ main {
 
 .timeline-item::after {
     content: '';
-    position: absolute;
+    position:absolute;
     width: 16px;
     height: 16px;
     background-color: white;
