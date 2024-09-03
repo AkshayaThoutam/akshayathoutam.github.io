@@ -27,7 +27,7 @@ body.light-mode main {
 }
 
 .sidebar {
-    width: 200px; /* Default width */
+    width: 200px; /* Reduced the width */
     background-color: #2b2b2b; /* Darker grey */
     color: #b0b0b0;
     padding: 20px;
@@ -140,28 +140,37 @@ body.light-mode .sidebar nav ul li a.active {
 
 main {
     flex-grow: 1;
-    margin-left: 200px; /* Default margin for sidebar */
+    margin-left: 250px; /* Increased the left margin */
     padding: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.container {
-    width: 90%; /* Responsive width */
-    max-width: 1200px; /* Optional: max-width for large screens */
-    margin: 0 auto; /* Center the container */
+.publication-year {
+    font-size: 1.5em;
+    margin-top: 20px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.publications-list {
+    list-style: none;
+    padding: 0;
 }
 
-/* Small devices (phones, 600px and down) */
-@media screen and (max-width: 600px) {
+.publications-list li {
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
     .sidebar {
         width: 100%;
         height: auto;
         position: relative;
+    }
+
+    .sidebar-content {
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     .menu-toggle {
@@ -174,47 +183,5 @@ img {
 
     main {
         margin-left: 0;
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-        left: 0;
-    }
-
-    .timeline-item::after {
-        left: 15px;
-    }
-
-    .date {
-        width: auto;
-        text-align: left;
-        left: 15px;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media screen and (min-width: 768px) {
-    .sidebar {
-        width: 200px; /* Reset to default width */
-        height: 100vh;
-        position: fixed;
-    }
-
-    main {
-        margin-left: 200px; /* Adjust based on sidebar width */
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-}
-
-/* Large devices (desktops, 1200px and up) */
-@media screen and (min-width: 1200px) {
-    .container {
-        max-width: 1200px; /* Adjust max-width for large screens */
     }
 }
