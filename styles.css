@@ -83,7 +83,7 @@ body.light-mode .sidebar {
     margin: 10px 0;
 }
 
-sidebar nav ul li a {
+.sidebar nav ul li a {
     text-decoration: none;
     color: inherit;
     display: flex;
@@ -132,11 +132,10 @@ body.light-mode .sidebar nav ul li a.active {
 }
 
 .menu-toggle {
-    display: block; /* Display the menu toggle button */
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1001;
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
 }
 
 main {
@@ -162,6 +161,7 @@ main {
     margin: 15px 0;
 }
 
+/* Tablet Screen */
 @media (max-width: 1024px) {
     .sidebar {
         width: 150px;
@@ -172,6 +172,7 @@ main {
     }
 }
 
+/* Mobile Screen */
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
@@ -184,11 +185,20 @@ main {
         display: block; /* Show sidebar when toggled */
     }
 
+    .menu-toggle {
+        display: block; /* Display the menu toggle button */
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1001;
+    }
+
     main {
         margin-left: 0;
     }
 }
 
+/* Timeline Styles */
 .timeline {
     position: relative;
     max-width: 1000px;
