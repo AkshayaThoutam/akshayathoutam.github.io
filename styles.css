@@ -263,40 +263,41 @@ body.light-mode .content {
 }
 
 .date {
-    position:absolute;
-    width: 20%;
-    text-align: right;
+    position: absolute;
+    width: 25%; /* Increased width */
+    text-align: left; /* Align text to the left */
     top: 15px;
-    left: -25%;
+    left: -30%; /* Adjust left position */
     color: #b0b0b0;
+    font-size: 0.9em; /* Increased font size */
+    white-space: nowrap; /* Keep date on one line */
+    z-index: 2; /* Ensure visibility over other elements */
 }
 
 @media screen and (max-width: 600px) {
     .timeline::after {
-        left: 31px;
+        left: 20px;
     }
 
     .timeline-item {
         width: 100%;
-        padding-left: 70px;
+        padding-left: 50px;
         padding-right: 25px;
         left: 0;
     }
 
     .timeline-item::after {
-        left: 15px;
+        left: 20px;
     }
 
     .date {
-        width: auto;
-        text-align: left;
-        left: 15px;
-        top: auto; /* Remove top positioning */
-        bottom: 10px; /* Position the date below the content */
+        left: 50px;
+        top: -10px; /* Move date above the content */
+        font-size: 1em; /* Increase font size */
     }
 
     .content {
-        margin-top: 20px; /* Add some space above the content to avoid overlap */
+        margin-top: 30px; /* Add space above content */
     }
 }
 
@@ -306,5 +307,5 @@ body.light-mode .content {
 
 .content p strong {
     display: block;
-    font-size: 1.1em; /* Slightly larger font size for the strong text */
+    font-size: 1.1em;
 }
