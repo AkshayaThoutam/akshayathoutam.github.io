@@ -1,5 +1,3 @@
-/* Existing CSS code */
-
 body {
     margin: 0;
     font-family: 'Nunito Sans', Arial, sans-serif;
@@ -165,35 +163,6 @@ main {
 
 .publications-list li {
     margin: 15px 0;
-}
-
-/* Media query for smaller screens */
-@media screen and (max-width: 800px) {
-    .sidebar, .main, .right { /* Adjust the elements as per your layout */
-        width: 100%; /* Set width to 100% when viewport is 800px or smaller */
-    }
-
-    main {
-        margin-left: 0; /* Reset margin for smaller screens */
-    }
-
-    .sidebar {
-        position: relative;
-        height: auto;
-    }
-
-    .sidebar-content {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .sidebar.show {
-        display: block;
-    }
 }
 
 @media (max-width: 768px) {
