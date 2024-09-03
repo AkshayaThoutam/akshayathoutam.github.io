@@ -7,8 +7,8 @@ body {
 }
 
 body.dark-mode {
-    background-color: #1c1c1c; /* Darker grey */
-    color: #b0b0b0; /* Match sidebar text color */
+    background-color: #1c1c1c;
+    color: #b0b0b0;
 }
 
 body.light-mode {
@@ -17,8 +17,8 @@ body.light-mode {
 }
 
 body.dark-mode main {
-    background-color: #232323; /* Slightly darker than the sidebar */
-    color: #b0b0b0; /* Match sidebar text color */
+    background-color: #232323;
+    color: #b0b0b0;
 }
 
 body.light-mode main {
@@ -27,8 +27,8 @@ body.light-mode main {
 }
 
 .sidebar {
-    width: 200px; /* Reduced the width */
-    background-color: #2b2b2b; /* Darker grey */
+    width: 200px;
+    background-color: #2b2b2b;
     color: #b0b0b0;
     padding: 20px;
     display: flex;
@@ -69,7 +69,7 @@ body.light-mode .sidebar {
 }
 
 .sidebar .profile p {
-    font-style: italic; /* Italicize the text */
+    font-style: italic;
 }
 
 .sidebar nav ul {
@@ -92,13 +92,13 @@ body.light-mode .sidebar {
     text-align: left;
     border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
-    font-weight: bold; /* Make text bold */
-    text-transform: uppercase; /* Make text uppercase */
-    font-family: 'Nunito Sans', Arial, sans-serif; /* Set font to Nunito Sans */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Nunito Sans', Arial, sans-serif;
 }
 
 .sidebar nav ul li a i {
-    margin-right: 10px; /* Space between icon and text */
+    margin-right: 10px;
 }
 
 .sidebar nav ul li a:hover,
@@ -140,7 +140,7 @@ body.light-mode .sidebar nav ul li a.active {
 
 main {
     flex-grow: 1;
-    margin-left: 250px; /* Increased the left margin */
+    margin-left: 250px;
     padding: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -159,6 +159,43 @@ main {
 
 .publications-list li {
     margin: 15px 0;
+}
+
+/* Tablet Screen */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 150px;
+    }
+
+    main {
+        margin-left: 170px;
+    }
+}
+
+/* Mobile Screen */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: none; /* Hide sidebar by default on mobile */
+    }
+
+    .sidebar.show {
+        display: block; /* Show sidebar when toggled */
+    }
+
+    .menu-toggle {
+        display: block; /* Display the menu toggle button */
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1001;
+    }
+
+    main {
+        margin-left: 0;
+    }
 }
 
 /* Timeline Styles */
@@ -185,7 +222,7 @@ main {
     padding: 10px 20px;
     position: relative;
     background-color: inherit;
-    width: 50%; /* Adjust width to make the blocks smaller */
+    width: 50%;
     left: 25%;
 }
 
@@ -206,23 +243,23 @@ main {
     padding: 5px 10px;
     position: relative;
     border-radius: 6px;
-    font-size: 0.7em; /* Keep the subtext font size the same */
+    font-size: 0.7em;
 }
 
 .content h3 {
-    font-size: 1.7em; /* Increase font size for titles */
+    font-size: 1.7em;
     margin: 0 0 10px;
-    color: teal; /* Make titles teal */
+    color: teal;
 }
 
 body.dark-mode .content {
-    background-color: #2b2b2b; /* Dark grey in dark mode */
-    color: #b0b0b0; /* Light grey text in dark mode */
+    background-color: #2b2b2b;
+    color: #b0b0b0;
 }
 
 body.light-mode .content {
-    background-color: #e0e0e0; /* Light grey in light mode */
-    color: #000000; /* Black text in light mode */
+    background-color: #e0e0e0;
+    color: #000000;
 }
 
 .date {
