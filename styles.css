@@ -83,7 +83,7 @@ body.light-mode .sidebar {
     margin: 10px 0;
 }
 
-.sidebar nav ul li a {
+sidebar nav ul li a {
     text-decoration: none;
     color: inherit;
     display: flex;
@@ -132,10 +132,11 @@ body.light-mode .sidebar nav ul li a.active {
 }
 
 .menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
+    display: block; /* Display the menu toggle button */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
 }
 
 main {
@@ -176,55 +177,121 @@ main {
         width: 100%;
         height: auto;
         position: relative;
-        display: none;
+        display: none; /* Hide sidebar by default on mobile */
     }
 
     .sidebar.show {
-        display: block;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 1001;
+        display: block; /* Show sidebar when toggled */
     }
 
     main {
         margin-left: 0;
     }
+}
 
-    .timeline {
-        padding: 0 20px;
-    }
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 0;
+    list-style: none;
+}
 
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #b0b0b0;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 20px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    left: 25%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 4px solid #b0b0b0;
+    top: 15px;
+    left: -11.5px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.content {
+    padding: 5px 10px;
+    position: relative;
+    border-radius: 6px;
+    font-size: 0.7em;
+}
+
+.content h3 {
+    font-size: 1.7em;
+    margin: 0 0 10px;
+    color: teal;
+}
+
+body.dark-mode .content {
+    background-color: #2b2b2b;
+    color: #b0b0b0;
+}
+
+body.light-mode .content {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+.date {
+    position: absolute;
+    width: 25%; /* Increased width */
+    text-align: left; /* Align text to the left */
+    top: 15px;
+    left: -30%; /* Adjust left position */
+    color: #b0b0b0;
+    font-size: 0.9em; /* Increased font size */
+    white-space: nowrap; /* Keep date on one line */
+    z-index: 2; /* Ensure visibility over other elements */
+}
+
+@media screen and (max-width: 600px) {
     .timeline::after {
         left: 20px;
     }
 
     .timeline-item {
-        width: calc(100% - 40px);
+        width: 100%;
         padding-left: 50px;
-        padding-right: 15px;
+        padding-right: 25px;
         left: 0;
     }
 
     .timeline-item::after {
-        left: 15px;
+        left: 20px;
     }
 
     .date {
-        left: 50px;
-        top: -10px;
-        background-color: #444;
-        color: #fff;
-        padding: 2px 5px;
-        border-radius: 4px;
+        left: 50px; /* Adjust for better positioning */
+        top: -10px; /* Move date above the timeline content for better visibility */
+        font-size: 1em; /* Increase font size for readability */
+        color: #ffffff; /* Change color for better contrast */
+        background-color: #444; /* Add background color for better visibility */
+        padding: 2px 5px; /* Add padding around the text */
+        border-radius: 4px; /* Round corners */
     }
 
     .content {
-        margin-top: 30px;
+        margin-top: 30px; /* Add space above content */
     }
 }
 
