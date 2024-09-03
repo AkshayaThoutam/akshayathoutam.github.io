@@ -136,12 +136,6 @@ body.light-mode .sidebar nav ul li a.active {
     font-size: 24px;
     cursor: pointer;
     padding: 10px;
-    position: fixed; /* Make the toggle button fixed */
-    top: 10px; /* Position it 10px from the top */
-    left: 10px; /* Position it 10px from the left */
-    z-index: 1001; /* Ensure it stays on top of other elements */
-    background-color: #f8f9fa; /* Optional: Add a background color */
-    border-radius: 5px; /* Optional: Round the corners */
 }
 
 main {
@@ -165,32 +159,6 @@ main {
 
 .publications-list li {
     margin: 15px 0;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .sidebar-content {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .sidebar.show {
-        display: block;
-    }
-
-    main {
-        margin-left: 0;
-    }
 }
 
 /* Timeline Styles */
@@ -258,7 +226,7 @@ body.light-mode .content {
 }
 
 .date {
-    position: absolute;
+    position:absolute;
     width: 20%;
     text-align: right;
     top: 15px;
@@ -286,6 +254,12 @@ body.light-mode .content {
         width: auto;
         text-align: left;
         left: 15px;
+        top: auto; /* Remove top positioning */
+        bottom: 10px; /* Position the date below the content */
+    }
+
+    .content {
+        margin-top: 20px; /* Add some space above the content to avoid overlap */
     }
 }
 
