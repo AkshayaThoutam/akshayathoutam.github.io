@@ -26,6 +26,7 @@ body.light-mode main {
     color: #000000;
 }
 
+/* Sidebar Styling */
 .sidebar {
     width: 200px;
     background-color: #2b2b2b;
@@ -39,7 +40,7 @@ body.light-mode main {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
     z-index: 1000;
-    overflow-y: auto; /* Ensure sidebar is scrollable if content exceeds screen height */
+    overflow-y: auto;
 }
 
 body.light-mode .sidebar {
@@ -47,32 +48,24 @@ body.light-mode .sidebar {
     color: #6c757d;
 }
 
-.sidebar-content {
+/* Main Content - Adjusted for Less Blank Space */
+main {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-left: 220px; /* Adjusted margin to better fit alongside sidebar */
+    padding: 40px 60px; /* Increased padding for a balanced layout */
+    max-width: 1100px; /* Restricts text width to maintain readability */
 }
 
-.sidebar .profile {
-    text-align: center;
-    margin-bottom: 20px;
+/* Content Container - Adjusted Width */
+.content-container {
+    max-width: 950px; /* Increased from 800px to better fit laptop screens */
+    margin: 0 auto;
+    font-size: 1.15em; /* Slightly larger text for readability */
+    line-height: 1.6;
+    padding: 20px;
 }
 
-.sidebar .profile .profile-pic {
-    width: 100px;
-    height: 100px;
-    background-color: #444;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.sidebar .profile p {
-    font-style: italic;
-}
-
+/* Sidebar Navigation */
 .sidebar nav ul {
     list-style-type: none;
     padding: 0;
@@ -114,29 +107,13 @@ body.light-mode .sidebar nav ul li a.active {
     color: #000000;
 }
 
-/* .social-icons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding-bottom: 20px;
-}
-
-.social-icons .icon {
-    color: inherit;
-    font-size: 24px;
-    margin: 10px;
-    transition: color 0.3s;
-}
-
-.social-icons .icon:hover {
-    color: #007bff;
-} */
+/* Social Icons */
 .social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px; /* Adds even spacing between icons */
-    flex-wrap: nowrap; /* Ensures all icons stay on one line */
+    gap: 12px;
+    flex-wrap: nowrap;
     width: 100%;
     padding-bottom: 20px;
 }
@@ -153,7 +130,7 @@ body.light-mode .sidebar nav ul li a.active {
     transform: scale(1.1);
 }
 
-
+/* Menu Toggle for Mobile */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -161,57 +138,39 @@ body.light-mode .sidebar nav ul li a.active {
     padding: 10px;
 }
 
-main {
-    flex-grow: 1;
-    margin-left: 250px;
-    padding: 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.publication-year {
-    font-size: 1.5em;
-    margin-top: 20px;
-    border-bottom: 2px solid #444;
-    padding-bottom: 5px;
-}
-
-.publications-list {
-    list-style: none;
-    padding: 0;
-}
-
-.publications-list li {
-    margin: 15px 0;
-}
-
-/* Tablet Screen */
+/* Tablet Adjustments */
 @media (max-width: 1024px) {
     .sidebar {
-        width: 150px;
+        width: 160px;
     }
 
     main {
-        margin-left: 170px;
+        margin-left: 180px;
+        padding: 30px;
+    }
+
+    .content-container {
+        max-width: 90%;
     }
 }
 
-/* Mobile Screen */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
-        height: 100vh; /* Ensure sidebar covers the full viewport height */
-        position: fixed; /* Keep sidebar fixed */
-        top: 0; /* Align sidebar to the top */
-        overflow-y: auto; /* Make sidebar scrollable */
-        display: none; /* Hide sidebar by default on mobile */
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        overflow-y: auto;
+        display: none;
     }
 
     .sidebar.show {
-        display: block; /* Show sidebar when toggled */
+        display: block;
     }
 
     .menu-toggle {
-        display: block; /* Display the menu toggle button */
+        display: block;
         position: fixed;
         top: 10px;
         left: 10px;
@@ -220,121 +179,11 @@ main {
 
     main {
         margin-left: 0;
-    }
-}
-
-/* Timeline Styles */
-.timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 10px 0;
-    list-style: none;
-}
-
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background-color: #b0b0b0;
-    top: 0;
-    bottom: 0;
-    left: 25%;
-    margin-left: -2px;
-}
-
-.timeline-item {
-    padding: 10px 20px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-    left: 25%;
-}
-
-.timeline-item::after {
-    content: '';
-    position:absolute;
-    width: 16px;
-    height: 16px;
-    background-color: white;
-    border: 4px solid #b0b0b0;
-    top: 15px;
-    left: -11.5px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.content {
-    padding: 5px 10px;
-    position: relative;
-    border-radius: 6px;
-    font-size: 0.7em;
-}
-
-.content h3 {
-    font-size: 1.7em;
-    margin: 0 0 10px;
-    color: teal;
-}
-
-body.dark-mode .content {
-    background-color: #2b2b2b;
-    color: #b0b0b0;
-}
-
-body.light-mode .content {
-    background-color: #e0e0e0;
-    color: #000000;
-}
-
-.date {
-    position: absolute;
-    width: 25%; /* Increased width */
-    text-align: left; /* Align text to the left */
-    top: 15px;
-    left: -30%; /* Adjust left position */
-    color: #b0b0b0;
-    font-size: 0.9em; /* Increased font size */
-    white-space: nowrap; /* Keep date on one line */
-    z-index: 2; /* Ensure visibility over other elements */
-}
-
-@media screen and (max-width: 600px) {
-    .timeline::after {
-        left: 20px;
+        padding: 20px;
     }
 
-    .timeline-item {
-        width: 100%;
-        padding-left: 50px;
-        padding-right: 25px;
-        left: 0;
+    .content-container {
+        max-width: 100%;
+        padding: 15px;
     }
-
-    .timeline-item::after {
-        left: 20px;
-    }
-
-    .date {
-        left: 50px; /* Adjust for better positioning */
-        top: -10px; /* Move date above the timeline content for better visibility */
-        font-size: 1em; /* Increase font size for readability */
-        color: #ffffff; /* Change color for better contrast */
-        background-color: #444; /* Add background color for better visibility */
-        padding: 2px 5px; /* Add padding around the text */
-        border-radius: 4px; /* Round corners */
-    }
-
-    .content {
-        margin-top: 30px; /* Add space above content */
-    }
-}
-
-.content p {
-    margin: 5px 0;
-}
-
-.content p strong {
-    display: block;
-    font-size: 1.1em;
 }
