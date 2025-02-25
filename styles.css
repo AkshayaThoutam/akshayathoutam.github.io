@@ -114,7 +114,7 @@ body.light-mode .sidebar nav ul li a.active {
     color: #000000;
 }
 
-.social-icons {
+/* .social-icons {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -130,6 +130,25 @@ body.light-mode .sidebar nav ul li a.active {
 
 .social-icons .icon:hover {
     color: #007bff;
+} */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.social-icons .icon {
+    color: inherit;
+    font-size: 22px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-icons .icon:hover {
+    color: #007bff;
+    transform: scale(1.1);
 }
 
 .menu-toggle {
