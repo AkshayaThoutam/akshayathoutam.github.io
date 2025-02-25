@@ -8,24 +8,6 @@
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .pdf-container {
-            width: 100%; /* Full width to use all available space */
-            max-width: 800px; /* Maximum width, but allows scaling down */
-            height: auto; /* Automatic height based on aspect ratio */
-            aspect-ratio: 8.5 / 11; /* Standard US letter aspect ratio */
-            padding-top: 25px; /* Padding to separate from header */
-            border: 1px solid #b0b0b0; /* Visual boundary (if needed) */
-            overflow: auto; /* Allows scrolling for smaller screens */
-            margin: 0 auto; /* Center the PDF container */
-            background-color: #fff; /* Ensure background is white for better readability */
-        }
-        .pdf-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none; /* Remove iframe border */
-        }
-    </style>
 </head>
 <body class="light-mode">
     <div class="menu-toggle">MENU</div>
@@ -56,9 +38,10 @@
     </aside>
     <main>
         <h2>Curriculum Vitae</h2>
-        <div class="pdf-container">
-            <iframe src="./images/compbio_resume.pdf" type="application/pdf" allowfullscreen></iframe>
-        </div>
+        <p>View my full Curriculum Vitae:</p>
+        <a href="./images/compbio_resume.pdf" download>
+            <button>Download CV</button>
+        </a>
     </main>
 </body>
 </html>

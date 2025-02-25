@@ -53,4 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', currentTheme);
         });
     });
+
+    // Close sidebar when clicking outside of it on mobile
+    document.addEventListener('click', function(event) {
+        if (!sidebar.contains(event.target) && !menuToggle.contains(event.target) && window.innerWidth <= 768) {
+            sidebar.classList.remove('show');
+        }
+    });
 });
