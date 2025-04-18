@@ -232,38 +232,13 @@ main {
     box-sizing: border-box;
 }
 
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: white;
-    border: 4px solid #b0b0b0;
-    top: 15px;
-    left: 100%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    z-index: 1;
-}
-
 .timeline-item.left {
     left: 0;
     text-align: left;
 }
 
-.timeline-item.left .content {
-    float: left;
-    text-align: left;
-    clear: both;
-}
-
-.timeline-item.left::after {
-    left: 100%;
-    transform: translateX(-50%);
-}
-
-.timeline-item.left .date {
-    left: calc(100% + 15px);
+.timeline-item:not(.left) {
+    left: 50%;
 }
 
 .timeline-item .content {
@@ -273,10 +248,30 @@ main {
     font-size: 0.7em;
 }
 
+.timeline-item.left .content {
+    float: left;
+    clear: both;
+    text-align: left;
+}
+
 .timeline-item:not(.left) .content {
     float: left;
     clear: both;
     text-align: left;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 4px solid #b0b0b0;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .content h3 {
@@ -303,6 +298,10 @@ body.light-mode .content {
     font-size: 0.9em;
     white-space: nowrap;
     z-index: 2;
+}
+
+.timeline-item.left .date {
+    left: calc(100% + 15px);
 }
 
 .timeline-item:not(.left) .date {
