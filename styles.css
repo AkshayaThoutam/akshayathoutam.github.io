@@ -39,7 +39,7 @@ body.light-mode main {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
     z-index: 1000;
-    overflow-y: auto;
+    overflow-y: auto; /* Ensure sidebar is scrollable if content exceeds screen height */
 }
 
 body.light-mode .sidebar {
@@ -114,12 +114,29 @@ body.light-mode .sidebar nav ul li a.active {
     color: #000000;
 }
 
+/* .social-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.social-icons .icon {
+    color: inherit;
+    font-size: 24px;
+    margin: 10px;
+    transition: color 0.3s;
+}
+
+.social-icons .icon:hover {
+    color: #007bff;
+} */
 .social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
-    flex-wrap: nowrap;
+    gap: 12px; /* Adds even spacing between icons */
+    flex-wrap: nowrap; /* Ensures all icons stay on one line */
     width: 100%;
     padding-bottom: 20px;
 }
@@ -135,6 +152,7 @@ body.light-mode .sidebar nav ul li a.active {
     color: #007bff;
     transform: scale(1.1);
 }
+
 
 .menu-toggle {
     display: none;
@@ -181,19 +199,19 @@ main {
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        overflow-y: auto;
-        display: none;
+        height: 100vh; /* Ensure sidebar covers the full viewport height */
+        position: fixed; /* Keep sidebar fixed */
+        top: 0; /* Align sidebar to the top */
+        overflow-y: auto; /* Make sidebar scrollable */
+        display: none; /* Hide sidebar by default on mobile */
     }
 
     .sidebar.show {
-        display: block;
+        display: block; /* Show sidebar when toggled */
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Display the menu toggle button */
         position: fixed;
         top: 10px;
         left: 10px;
@@ -208,7 +226,7 @@ main {
 /* Timeline Styles */
 .timeline {
     position: relative;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 10px 0;
     list-style: none;
@@ -221,57 +239,36 @@ main {
     background-color: #b0b0b0;
     top: 0;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 25%;
+    margin-left: -2px;
 }
 
 .timeline-item {
+    padding: 10px 20px;
     position: relative;
-    width: 50%;
-    padding: 20px 40px;
-    box-sizing: border-box;
-}
-
-.timeline-item.left {
-    left: 0;
-    text-align: left;
-}
-
-.timeline-item:not(.left) {
-    left: 50%;
-}
-
-.timeline-item .content {
     background-color: inherit;
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-size: 0.7em;
-}
-
-.timeline-item.left .content {
-    float: left;
-    clear: both;
-    text-align: left;
-}
-
-.timeline-item:not(.left) .content {
-    float: left;
-    clear: both;
-    text-align: left;
+    width: 50%;
+    left: 25%;
 }
 
 .timeline-item::after {
     content: '';
-    position: absolute;
+    position:absolute;
     width: 16px;
     height: 16px;
     background-color: white;
     border: 4px solid #b0b0b0;
     top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: -11.5px;
     border-radius: 50%;
     z-index: 1;
+}
+
+.content {
+    padding: 5px 10px;
+    position: relative;
+    border-radius: 6px;
+    font-size: 0.7em;
 }
 
 .content h3 {
@@ -292,20 +289,45 @@ body.light-mode .content {
 
 .date {
     position: absolute;
-    width: max-content;
+    width: 25%; /* Increased width */
+    text-align: left; /* Align text to the left */
     top: 15px;
+    left: -30%; /* Adjust left position */
     color: #b0b0b0;
-    font-size: 0.9em;
-    white-space: nowrap;
-    z-index: 2;
+    font-size: 0.9em; /* Increased font size */
+    white-space: nowrap; /* Keep date on one line */
+    z-index: 2; /* Ensure visibility over other elements */
 }
 
-.timeline-item.left .date {
-    left: calc(100% + 15px);
-}
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 20px;
+    }
 
-.timeline-item:not(.left) .date {
-    left: calc(100% + 15px);
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 25px;
+        left: 0;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+    }
+
+    .date {
+        left: 50px; /* Adjust for better positioning */
+        top: -10px; /* Move date above the timeline content for better visibility */
+        font-size: 1em; /* Increase font size for readability */
+        color: #ffffff; /* Change color for better contrast */
+        background-color: #444; /* Add background color for better visibility */
+        padding: 2px 5px; /* Add padding around the text */
+        border-radius: 4px; /* Round corners */
+    }
+
+    .content {
+        margin-top: 30px; /* Add space above content */
+    }
 }
 
 .content p {
