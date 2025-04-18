@@ -338,3 +338,12 @@ body.light-mode .content {
     display: block;
     font-size: 1.1em;
 }
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.left .date {
+    text-align: right;
+    left: calc(100% + 10px); /* Push to the far right */
+}
