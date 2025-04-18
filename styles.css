@@ -248,16 +248,22 @@ main {
 
 .timeline-item.left {
     left: 0;
-    text-align: right;
+    text-align: left;
+}
+
+.timeline-item.left .content {
+    float: left;
+    text-align: left;
+    clear: both;
 }
 
 .timeline-item.left::after {
-    left: 0%;
+    left: 100%;
     transform: translateX(-50%);
 }
 
-.timeline-item:not(.left) {
-    left: 50%;
+.timeline-item.left .date {
+    left: calc(100% + 15px);
 }
 
 .timeline-item .content {
@@ -265,12 +271,6 @@ main {
     padding: 5px 10px;
     border-radius: 6px;
     font-size: 0.7em;
-}
-
-.timeline-item.left .content {
-    float: right;
-    clear: both;
-    text-align: left;
 }
 
 .timeline-item:not(.left) .content {
@@ -303,10 +303,6 @@ body.light-mode .content {
     font-size: 0.9em;
     white-space: nowrap;
     z-index: 2;
-}
-
-.timeline-item.left .date {
-    right: calc(100% + 15px);
 }
 
 .timeline-item:not(.left) .date {
