@@ -29,8 +29,6 @@ My advisors have included Greg Gibson (GT), Nasrin Hooshmand (GT),
 Simon Knott (Cedars-Sinai), and Joshua Levin (Broad).
 </p>
 
-## Selected Publications
-======
 
 <h2 class="selected-publications-title">Selected Publications</h2>
 
