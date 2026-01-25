@@ -75,3 +75,10 @@
   pointer-events: auto !important;
   cursor: pointer !important;
 }
+
+/* Make the active navigation item clickable again */
+.masthead__menu-item.selected a {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
