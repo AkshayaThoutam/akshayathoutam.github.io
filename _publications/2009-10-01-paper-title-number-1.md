@@ -9,9 +9,7 @@ badge2: "Paper"
 badge2_style: "outline"
 authors: "Ajay Nadig†, Akshaya Thoutam†, etc, etc"
 paperurl: "https://..."
-arxiv: "https://arxiv.org/abs/...."
-biorxiv: "https://www.biorxiv.org/content/...."
-bibtex: "/files/switchcraft.bib"
+biorxiv: "https://www.biorxiv.org/content/10.1101/2025.02.19.639127v1"
 abstract: "Short abstract text..."
 ---
 
