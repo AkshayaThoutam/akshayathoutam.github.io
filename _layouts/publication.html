@@ -7,6 +7,14 @@ This wraps the normal single layout but hides the publication meta line via CSS 
 {% endcomment %}
 
 <div class="publication-page">
+
+  {% if page.venue and page.date %}
+    <div class="pub-venue-line">
+      {{ page.venue }}, {{ page.date | date: "%Y" }}
+    </div>
+  {% endif %}
+
   {{ content }}
+
 </div>
 

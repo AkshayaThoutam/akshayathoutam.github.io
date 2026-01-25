@@ -56,8 +56,10 @@
   margin-bottom: 40px;   /* adjust to taste: 24px, 32px, 40px, etc */
 }
 
+/* Hide default "Published in ..." line for publications */
 .publication-page .page__meta,
-.publication-page .page__date {
+.publication-page .page__meta-date,
+.publication-page .page__taxonomy {
   display: none !important;
 }
 
@@ -100,4 +102,11 @@
   font-weight: 400;
   color: rgba(0,0,0,0.25);
   margin: 40px 0 20px 0;
+}
+
+.pub-venue-line {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.6);
+  margin-bottom: 20px;
 }
