@@ -1,0 +1,38 @@
+{% assign p = include.p %}
+<div class="pub-row">
+  <div class="pub-badges">
+    {% if p.venue_short %}
+      <div class="pub-badge pub-badge-solid">{{ p.venue_short }}</div>
+    {% endif %}
+
+    {% if p.badge2 %}
+      <div class="pub-badge {% if p.badge2_style == 'outline' %}pub-badge-outline{% else %}pub-badge-solid{% endif %}">
+        {{ p.badge2 }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="pub-main">
+    <div class="pub-title">{{ p.title }}</div>
+    {% if p.authors %}<div class="pub-authors">{{ p.authors }}</div>{% endif %}
+    {% if p.venue or p.date %}
+      <div class="pub-venue">
+        {% if p.venue %}{{ p.venue }}{% endif %}
+        {% if p.date %}{% if p.venue %} · {% endif %}{{ p.date | date: "%b %Y" }}{% endif %}
+      </div>
+    {% endif %}
+
+    <div class="pub-links">
+      {% if p.abstract %}<a class="pub-btn" href="{{ p.url | relative_url }}">ABS</a>{% endif %}
+      {% if p.paperurl %}<a class="pub-btn" href="{{ p.paperurl }}">PDF</a>{% endif %}
+      {% if p.arxiv %}<a class="pub-btn" href="{{ p.arxiv }}">ARXIV</a>{% endif %}
+      {% if p.biorxiv %}<a class="pub-btn" href="{{ p.biorxiv }}">BIORXIV</a>{% endif %}
+      {% if p.bibtex %}<a class="pub-btn" href="{{ p.bibtex }}">BIB</a>{% endif %}
+    </div>
+  </div>
+
+  <div class="pub-year">
+    {% if p.date %}{{ p.date | date: "%Y" }}{% endif %}
+  </div>
+</div>
+
