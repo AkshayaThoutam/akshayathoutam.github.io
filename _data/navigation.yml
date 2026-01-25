@@ -35,7 +35,7 @@
 main:
   - title: "Publications"
     url: /publications/
-    icon: "fa-dna"
+    icon: "dna"
 
   - title: "Talks"
     url: /talks/    
