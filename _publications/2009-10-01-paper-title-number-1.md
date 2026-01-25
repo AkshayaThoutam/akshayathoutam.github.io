@@ -1,6 +1,7 @@
 ---
 title: "Consequences of training data composition for deep learning models in single cell biology"
 collection: publications
+category: manuscripts
 date: 2025-02-24
 venue: "Genome Biology"
 venue_short: "Genome Bio"
@@ -14,6 +15,11 @@ bibtex: "/files/switchcraft.bib"
 abstract: "Short abstract text..."
 ---
 
-The contents above will be part of a list of publications. If the user clicks the publication title, this section will be rendered as a full page, allowing you to provide more information about the paper for the reader.
+Longer description goes here. This content will appear on the **publication’s own page** when someone clicks the title.
 
-You can put an extended abstract here, key results, figures, links to code, etc.
+You can include:
+- a longer abstract
+- key findings
+- links to code/data
+- figures
+- press links
