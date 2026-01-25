@@ -1,5 +1,5 @@
 ---
-title: "Evaluating the role of pre-training dataset size, diversity, and composition on single-cell foundation model performanc"
+title: "Evaluating the role of pre-training dataset size, diversity, and composition on single-cell foundation model performance"
 collection: publications
 category: manuscripts
 date: 2025-04-28

@@ -1,112 +1,126 @@
-
-.pub-badges{ display:flex; flex-direction:column; gap:10px; }
-
-.pub-badge{
-  font-weight:600;
-  font-size: 10px;
-  padding: 6px 8px;
-  border-radius: 4px;
-  line-height: 1;
-  text-align:center;
-}
-
-.pub-badge-solid{
-  background: #2ba0ff;  /* adjust to your theme */
-  color: white;
-  box-shadow: 0 6px 18px rgba(0,0,0,.10);
-}
-
-.pub-badge-outline{
-  background: transparent;
-  border: 2px solid #2ba0ff;
-  color: #2ba0ff;
-}
-
-.pub-title{ font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-.pub-authors{ font-size: 12px; opacity: .85; margin-bottom: 4px; }
-.pub-venue{ font-size: 12px; opacity: .75; margin-bottom: 10px; }
-
-.pub-links{ display:flex; gap: 14px; flex-wrap: wrap; }
-
-.pub-btn{
-  display:inline-block;
-  padding: 8px 14px;
-  border: 2px solid rgba(0,0,0,.45);
-  border-radius: 6px;
-  font-weight:600;
-  font-size: 8px;
-  text-decoration:none;
-}
-
-.pub-year{
-  font-size: 20px;
-  opacity: .25;
-  text-align:right;
-  line-height: 1;
-  margin-top: 4px;
-}
-
-@media (max-width: 800px){
-  .pub-row{ grid-template-columns: 1fr; }
-  .pub-year{ text-align:left; }
-  .pub-badges{ flex-direction:row; }
-}
-
-.wordwrap {
-  margin-bottom: 40px;   /* adjust to taste: 24px, 32px, 40px, etc */
-}
-
-/* Hide default "Published in ..." line for publications */
-.publication-page .page__meta,
-.publication-page .page__meta-date,
-.publication-page .page__taxonomy {
-  display: none !important;
-}
-
-/* Make the active nav item clickable (Publications tab) */
-.masthead__menu-item a.is-active,
-.masthead__menu-item a.active {
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
-
-/* Make the active navigation item clickable again */
-.masthead__menu-item.selected a {
-  pointer-events: auto !important;
-  cursor: pointer !important;
-  opacity: 1 !important;
-}
-
-/* Hide the "Published in ..." line + other meta text on publication pages */
-.publication-page .page__meta,
-.publication-page .page__meta-date,
-.publication-page .page__taxonomy,
-.publication-page .page__meta p,
-.publication-page p.page__meta {
-  display: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+/* ===== Publications list styling ===== */
 
 .pub-row {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 120px 1fr; /* badges + main content */
   gap: 18px;
   align-items: start;
   padding: 18px 0;
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
+.pub-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pub-badge {
+  font-weight: 600;
+  font-size: 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  text-align: center;
+}
+
+.pub-badge-solid {
+  background: #2ba0ff; /* site blue */
+  color: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+}
+
+.pub-badge-outline {
+  background: transparent;
+  border: 2px solid #2ba0ff;
+  color: #2ba0ff;
+}
+
+.pub-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.pub-authors {
+  font-size: 12px;
+  opacity: .85;
+  margin-bottom: 4px;
+}
+
+.pub-venue {
+  font-size: 12px;
+  opacity: .75;
+  margin-bottom: 10px;
+}
+
+.pub-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pub-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 2px solid rgba(0,0,0,.45);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 8px;
+  text-decoration: none;
+}
+
+/* Year header shown once per year on /publications/ */
 .pub-year-header {
   font-size: 26px;
   font-weight: 400;
-  color: rgba(0,0,0,0.25);
+  color: rgba(0,0,0,.25);
   margin: 40px 0 20px 0;
 }
 
+/* Spacing below "Periodically updated..." on /publications/ */
+.wordwrap {
+  margin-bottom: 40px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .pub-row { grid-template-columns: 1fr; }
+  .pub-badges { flex-direction: row; }
+}
+
+/* ===== Publication (ABS) page tweaks ===== */
+
+/* This is the custom line you added in _layouts/publication.html */
 .pub-venue-line {
   font-size: 18px;
   font-weight: 500;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,.6);
   margin-bottom: 20px;
+}
+
+/* Hide the default theme meta that prints "Published in ..." (scoped only to publication pages) */
+.publication-page .page__meta,
+.publication-page .page__meta *,
+.publication-page .page__meta-date,
+.publication-page .page__taxonomy,
+.publication-page .page__meta-readtime,
+.publication-page .page__meta-sep,
+.publication-page p.page__meta {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Extra belt-and-suspenders in case theme keeps spacing */
+.publication-page .page__meta {
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* ===== Navigation tweak: keep active tab clickable ===== */
+.masthead__menu-item.selected a {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
 }
