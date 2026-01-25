@@ -26,12 +26,12 @@ My advisors have included <a href="https://ggibsongt.wixsite.com/gibsongatech/pe
 " target="_blank">Simon Knott</a>, and <a href="https://www.broadinstitute.org/bios/joshua-levin" target="_blank"> Joshua Levin</a>.
 </p>
 
-<h2 class="selected-publications-title">Selected Publications</h2>
+<h2 class="selected-publications-title">Selected Publications († = equal contribution)</h2>
 
 {% assign selected_pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
 
 <div class="selected-publications">
-  {% for pub in selected_pubs limit:3 %}
+  {% for pub in selected_pubs limit:10 %}
     {% include publication-item.html p=pub %}
   {% endfor %}
 </div>
