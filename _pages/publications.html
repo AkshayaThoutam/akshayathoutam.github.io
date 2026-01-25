@@ -6,40 +6,14 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">Periodically updated from <a href="{{site.author.googlescholar}}">google scholar</a>. <span class="pub-eq-note">(†=equal contribution)</span></div>
+  <div class="wordwrap">
+    Periodically updated from <a href="{{site.author.googlescholar}}">google scholar</a>.
+    <span class="pub-eq-note">(†=equal contribution)</span>
+  </div>
 {% endif %}
 
 {% include base_path %}
 
-<!-- Custom publication list item renderer -->
-{% comment %}
-  Expects each publication (_publications/*.md) to optionally include:
-  - venue_short: "MLSB" (badge text)
-  - badge2: "Oral" (optional second badge)
-  - badge2_style: "outline" or "solid" (optional)
-  - authors: "Name, Name, ..."
-  - venue: "Conference / Journal"
-  - date: YYYY-MM-DD
-  - paperurl, arxiv, biorxiv, bibtex: links for buttons
-  - abstract: (optional) if present, ABS button links to the publication page
-{% endcomment %}
-
-{% if site.publication_category %}
-  {% for category in site.publication_category %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include publication-item.html p=post %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include publication-item.html p=post %}
-  {% endfor %}
-{% endif %}
+{% for post in site.publications reversed %}
+  {% include publication-item.html p=post %}
+{% endfor %}
