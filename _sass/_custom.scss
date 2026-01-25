@@ -91,14 +91,6 @@
 
 /* ===== Publication (ABS) page tweaks ===== */
 
-/* This is the custom line you added in _layouts/publication.html */
-.pub-venue-line {
-  font-size: 18px;
-  font-weight: 500;
-  color: rgba(0,0,0,.6);
-  margin-bottom: 20px;
-}
-
 /* Hide the default theme meta that prints "Published in ..." (scoped only to publication pages) */
 .publication-page .page__meta,
 .publication-page .page__meta *,
