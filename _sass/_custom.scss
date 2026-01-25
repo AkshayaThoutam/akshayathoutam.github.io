@@ -11,9 +11,9 @@
 
 .pub-badge{
   font-weight:600;
-  font-size: 14px;
-  padding: 8px 10px;
-  border-radius: 6px;
+  font-size: 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
   line-height: 1;
   text-align:center;
 }
@@ -30,9 +30,9 @@
   color: #2ba0ff;
 }
 
-.pub-title{ font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-.pub-authors{ font-size: 10px; opacity: .85; margin-bottom: 4px; }
-.pub-venue{ font-size: 10px; opacity: .75; margin-bottom: 10px; }
+.pub-title{ font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.pub-authors{ font-size: 12px; opacity: .85; margin-bottom: 4px; }
+.pub-venue{ font-size: 12px; opacity: .75; margin-bottom: 10px; }
 
 .pub-links{ display:flex; gap: 14px; flex-wrap: wrap; }
 
@@ -62,4 +62,16 @@
 
 .wordwrap {
   margin-bottom: 40px;   /* adjust to taste: 24px, 32px, 40px, etc */
+}
+
+.publication-page .page__meta,
+.publication-page .page__date {
+  display: none !important;
+}
+
+/* Make the active nav item clickable (Publications tab) */
+.masthead__menu-item a.is-active,
+.masthead__menu-item a.active {
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
