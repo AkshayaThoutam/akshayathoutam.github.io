@@ -93,3 +93,19 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+
+.pub-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.pub-year-header {
+  font-size: 26px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.25);
+  margin: 40px 0 20px 0;
+}

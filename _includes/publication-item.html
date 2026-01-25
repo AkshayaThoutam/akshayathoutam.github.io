@@ -26,7 +26,9 @@
       {% if p.abstract %}<a class="pub-btn" href="{{ p.url | relative_url }}">ABS</a>{% endif %}
       {% if p.arxiv %}<a class="pub-btn" href="{{ p.arxiv }}">ARXIV</a>{% endif %}
       {% if p.biorxiv %}
-        <a class="pub-btn" href="{{ p.biorxiv }}" target="_blank" rel="noopener noreferrer">BIORXIV</a>
+        <a class="pub-btn" href="{{ p.biorxiv }}" target="_blank" rel="noopener noreferrer">
+          {{ p.paper_button_label | default: "Paper" }}
+        </a>
       {% endif %}
       {% if p.bibtex %}<a class="pub-btn" href="{{ p.bibtex }}">BIB</a>{% endif %}
     </div>

@@ -9,7 +9,7 @@ badge2: "Paper"
 badge2_style: "outline"
 authors: "Greg Gibson, John D Rioux, Judy H Cho, Talin Haritunians, Akshaya Thoutam, Maria T Abreu, Steven R Brant, Subra Kugathasan, Jacob L McCauley, Mark Silverberg, Dermot McGovern"
 paperurl: "https://..."
-biorxiv: "https://www.biorxiv.org/content/10.1101/2024.12.13.628448v1"
+Paper: "https://www.biorxiv.org/content/10.1101/2024.12.13.628448v1"
 abstract: "Short abstract text..."
 ---
 
