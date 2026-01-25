@@ -9,6 +9,7 @@ badge2: "Paper"
 badge2_style: "outline"
 authors: "Alan DenAdel, Madeline Hughes, Akshaya Thoutam, Anay Gupta, Andrew W. Navia, Nicolo Fusi, Srivatsan Raghavan, Peter S. Winter, Ava P. Amini, Lorin Crawford"
 paperurl: "https://..."
+paper_button_label: "bioRxiv"
 biorxiv: "https://www.biorxiv.org/content/10.1101/2024.12.13.628448v1"
 abstract: "Short abstract text..."
 ---
