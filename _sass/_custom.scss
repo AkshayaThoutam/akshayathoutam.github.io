@@ -157,3 +157,12 @@
 .selected-publications .pub-badges {
   gap: 6px;
 }
+
+/* Make the "Selected Publications" title smaller on the About page */
+.selected-publications-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}

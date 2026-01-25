@@ -29,8 +29,10 @@ My advisors have included Greg Gibson (GT), Nasrin Hooshmand (GT),
 Simon Knott (Cedars-Sinai), and Joshua Levin (Broad).
 </p>
 
-Selected Publications
+## Selected Publications
 ======
+
+<h2 class="selected-publications-title">Selected Publications</h2>
 
 {% assign selected_pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
 
@@ -39,5 +41,6 @@ Selected Publications
     {% include publication-item.html p=pub %}
   {% endfor %}
 </div>
+
 
 
