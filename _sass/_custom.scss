@@ -124,3 +124,8 @@
   cursor: pointer !important;
   opacity: 1 !important;
 }
+
+/* Hide the default "Published in ..." paragraph that appears under the title on publication pages */
+.publication-page header > p:first-of-type {
+  display: none !important;
+}
