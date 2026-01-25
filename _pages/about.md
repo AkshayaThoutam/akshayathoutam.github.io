@@ -16,11 +16,9 @@ Hello! I am Akshaya Thoutam, a computational associate II with the
 group at <strong><span class="teal-name">Microsoft Research</span></strong>
 (co-advised by Lorin Crawford and Ava Amini) and the
 <strong><span class="teal-name">Broad Institute</span></strong>
-(advised by Peter Winter).
+(advised by Peter Winter). My research focuses on developing and using machine learning methods to define and engineer transcriptomic cell states. I am also a Master’s student in the Clinical Research Program at <strong><a href="https://hms.harvard.edu/education-admissions/masters-degree-programs/master-science-clinical-research" target="_blank" class="teal-name">Harvard Medical School</a></strong>.
 
-My research focuses on developing and using machine learning methods to define and engineer transcriptomic cell states.  
-I am also a Master’s student in the Clinical Research Program at
-<strong><span class="teal-name">Harvard Medical School</span></strong>.
+
 
 <p>
 Previously, I graduated from the
