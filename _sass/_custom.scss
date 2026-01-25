@@ -121,3 +121,39 @@
 .publication-page header > p:first-of-type {
   display: none !important;
 }
+
+/* Make selected publications visually lighter on the About page */
+.selected-publications {
+  margin-top: 10px;
+}
+
+.selected-publications .pub-row {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.selected-publications .pub-badge {
+  font-size: 8px;
+  padding: 4px 6px;
+}
+
+.selected-publications .pub-title {
+  font-size: 14px;
+}
+
+.selected-publications .pub-authors {
+  font-size: 10px;
+}
+
+.selected-publications .pub-venue {
+  font-size: 10px;
+}
+
+.selected-publications .pub-btn {
+  font-size: 7px;
+  padding: 5px 10px;
+}
+
+.selected-publications .pub-badges {
+  gap: 6px;
+}

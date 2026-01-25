@@ -34,7 +34,10 @@ Selected Publications
 
 {% assign selected_pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
 
-{% for pub in selected_pubs %}
-  {% include publication-item.html p=pub %}
-{% endfor %}
+<div class="selected-publications">
+  {% for pub in selected_pubs limit:3 %}
+    {% include publication-item.html p=pub %}
+  {% endfor %}
+</div>
+
 
