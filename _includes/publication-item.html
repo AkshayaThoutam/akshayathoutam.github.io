@@ -24,7 +24,6 @@
 
     <div class="pub-links">
       {% if p.abstract %}<a class="pub-btn" href="{{ p.url | relative_url }}">ABS</a>{% endif %}
-      {% if p.paperurl %}<a class="pub-btn" href="{{ p.paperurl }}">PDF</a>{% endif %}
       {% if p.arxiv %}<a class="pub-btn" href="{{ p.arxiv }}">ARXIV</a>{% endif %}
       {% if p.biorxiv %}<a class="pub-btn" href="{{ p.biorxiv }}">BIORXIV</a>{% endif %}
       {% if p.bibtex %}<a class="pub-btn" href="{{ p.bibtex }}">BIB</a>{% endif %}
