@@ -166,3 +166,8 @@
   margin-bottom: 12px;
   opacity: 0.85;
 }
+
+.page__content a,
+.page__content a:hover {
+  text-decoration: none !important;
+}

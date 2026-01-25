@@ -8,13 +8,11 @@ redirect_from:
 ---
 
 Hello! I am Akshaya Thoutam, a computational associate II with the  
-<strong>
   <a href="https://exvivo.broadinstitute.org/" target="_blank" class="teal-name">
     Project Ex Vivo
   </a>
-</strong>
 group at Microsoft Research (co-advised by <a href="https://www.lorincrawford.com/" target="_blank"> Lorin Crawford</a> and <a href="https://avaamini.com/" target="_blank">Ava Amini</a>) and the
-Broad Institute (advised by <a href="https://scholar.google.com/citations?user=WmBw-kkAAAAJ&hl=en&oi=ao" target="_blank">Peter Winter</a>). My research focuses on developing and using machine learning methods to define and engineer transcriptomic cell states. I am also a Master’s student in the Clinical Research Program at <strong><a href="https://hms.harvard.edu/education-admissions/masters-degree-programs/master-science-clinical-research" target="_blank" class="teal-name">Harvard Medical School</a></strong>.
+Broad Institute (advised by <a href="https://scholar.google.com/citations?user=WmBw-kkAAAAJ&hl=en&oi=ao" target="_blank">Peter Winter</a>). My research focuses on developing and using machine learning methods to define and engineer transcriptomic cell states. I am also a Master’s student in the Clinical Research Program at <a href="https://hms.harvard.edu/education-admissions/masters-degree-programs/master-science-clinical-research" target="_blank" class="teal-name">Harvard Medical School</a>.
 
 
 
