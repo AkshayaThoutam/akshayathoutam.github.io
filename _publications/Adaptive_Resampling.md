@@ -3,8 +3,8 @@ title: "Adaptive resampling for improved machine learning in imbalanced single-c
 collection: publications
 category: manuscripts
 date: 2025-11-05
-venue: "Nature Methods"
-venue_short: "Nature Methods"
+venue: "Nature Communications"
+venue_short: "Nature Com"
 badge2: "Paper"
 badge2_style: "outline"
 authors: "Zeinab Navidi, Akshaya Thoutam, Madeline Hughes, Srivatsan Raghavan, Peter S. Winter, Lorin Crawford, Ava P. Amini"
