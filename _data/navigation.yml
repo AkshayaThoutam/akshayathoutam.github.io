@@ -32,25 +32,41 @@
 #   - title: "Guide"
 #     url: /markdown/
 
+# main:
+#   - title: "Publications"
+#     url: /publications/
+#     icon: "dna"
+
+#   - title: "Talks"
+#     url: /talks/    
+
+#   - title: "Teaching"
+#     url: /teaching/    
+    
+#   - title: "Portfolio"
+#     url: /portfolio/
+        
+#   - title: "Blog Posts"
+#     url: /year-archive/
+    
+#   - title: "CV"
+#     url: /cv/
+    
+#   - title: "Guide"
+#     url: /markdown/
+
 main:
+  - title: "Home"
+    url: /
+
   - title: "Publications"
     url: /publications/
-    icon: "dna"
 
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
+  - title: "Clinical"
     url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
-    
+
+  - title: "Research Themes"
+    url: /blog/
+
   - title: "CV"
     url: /cv/
-    
-  - title: "Guide"
-    url: /markdown/
