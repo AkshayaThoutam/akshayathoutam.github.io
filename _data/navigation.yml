@@ -56,13 +56,11 @@
 #     url: /markdown/
 
 main:
-  - title: "Home"
-    url: /
 
   - title: "Publications"
     url: /publications/
 
-  - title: "Clinical"
+  - title: "Clinical Experience"
     url: /portfolio/
 
   - title: "Research Themes"
