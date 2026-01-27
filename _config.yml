@@ -25,39 +25,38 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Akshaya Thoutam"
-  pronouns         : # example: "she/her"  
+  pronouns         : # example: "she/her"
   bio              : "BioML @ Microsoft/Broad"
-  location         : "Cambridge, MA"
+  location         : # removed
   employer         : "Harvard Medical School"
   uri              : # URL
-  email            : #"thoutam@broadinstitute.org" 
+  email            : # removed
 
   # Academic websites
   academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
+  arxiv            : # URL
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=02Km-4MAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/0009-0008-3513-9535"
+  orcid            : # removed
   semantic         : # URL
   ssrn             : # URL
-  # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
 
 
   # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
+  bitbucket        : # Username
   codepen          : # Username
   dribbble         : # Username
-  github           : "AkshayaThoutam"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+  github           : # removed
+  kaggle           : # Username
+  stackoverflow    : # Username
 
   # Social media
   artstation       : # Username
-  bluesky          : #"bsky.app" # Replace this with you Bluesky username
+  bluesky          : # Username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -66,7 +65,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "https://www.linkedin.com/in/akshaya-thoutam-0b24001b8/"
+  linkedin         : "akshaya-thoutam-0b24001b8"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -74,7 +73,7 @@ author:
   steam            : # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : "https://x.com/akshayathoutam"
+  twitter          : "akshayathoutam"
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username

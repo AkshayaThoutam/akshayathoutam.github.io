@@ -57,7 +57,7 @@
 
 main:
 
-  - title: "Publications"
+  - title: "Publications and Preprints"
     url: /publications/
 
   - title: "Clinical Experience"
@@ -66,5 +66,5 @@ main:
   - title: "Research Themes"
     url: /year-archive/
 
-  - title: "CV"
+  - title: "Curriculum Vitae"
     url: /cv/

@@ -1,19 +1,90 @@
 ---
 layout: archive
 permalink: /year-archive/
-title: "Blog posts"
+title: "Research Themes"
 author_profile: true
-redirect_from:
-  - /wordpress/blog-posts/
 ---
 
-{% include base_path %}
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
+<style>
+.research-themes {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.theme-box {
+  background: var(--global-bg-color, #fff);
+  border: 1px solid var(--global-border-color, rgba(0,0,0,0.1));
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.theme-box h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--global-text-color, #333);
+}
+
+.theme-subtitle {
+  margin: 0 0 16px 0;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--global-text-color, #666);
+  opacity: 0.7;
+}
+
+.theme-box p.theme-description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--global-text-color, #555);
+}
+
+@media (max-width: 600px) {
+  .theme-box {
+    padding: 20px;
+  }
+  .theme-box h3 {
+    font-size: 16px;
+  }
+}
+</style>
+
+<div class="research-themes">
+
+  <div class="theme-box">
+    <h3>Learning Biologically Meaningful Representations</h3>
+    <p class="theme-subtitle">Foundation models, representation learning, large-scale transcriptomic embeddings</p>
+    <p class="theme-description">
+      Machine learning methods are increasingly used to model complex biological systems, particularly in the analysis of large and multimodal datasets. However, models that achieve strong performance do not always learn representations that are biologically meaningful or interpretable. This work aims to develop models that learn representations reflecting both accurate prediction and deeper biological understanding.
+    </p>
+  </div>
+
+  <div class="theme-box">
+    <h3>Causal Modeling of Disease Programs</h3>
+    <p class="theme-subtitle">Causal inference, perturbation analysis, mechanisms driving malignant cell states, counterfactual reasoning, structural modeling, identifiability</p>
+    <p class="theme-description">
+      Transcriptomic analyses of disease are typically dominated by correlational patterns that do not resolve causal structure. We can use causal modeling frameworks to enable identification of molecular drivers rather than downstream consequences. This work disentangles causal mechanisms underlying cell states and disease progression from confounded or spurious associations.
+    </p>
+  </div>
+
+  <div class="theme-box">
+    <h3>Biophysics at the Nanoscale</h3>
+    <p class="theme-subtitle">Nanotechnology, biophysics, and physical principles of biological systems</p>
+    <p class="theme-description">
+      Biological systems are governed not only by molecular interactions but also by fundamental physical principles operating at the nanoscale. This theme focuses on using nanotechnology and biophysical modeling to understand how physical properties such as size, structure, and force shape behavior and molecular organization. By studying nanoparticles as engineered probes of biological systems, this work aims to connect physical design with biological function.
+    </p>
+  </div>
+
+  <div class="theme-box">
+    <h3>Clinical Translation and Responsible AI</h3>
+    <p class="theme-subtitle">Bioethics, responsible AI, societal impact of ML in healthcare</p>
+    <p class="theme-description">
+      The integration of machine learning into clinical research introduces ethical challenges that extend beyond technical performance, including concerns around bias, transparency, patient representation, and the downstream impact on medical decision-making. This theme focuses on embedding principles of responsible AI and bioethics into the design and evaluation of computational models used in biomedical and clinical research. By aligning methodological rigor with ethical accountability, we can aim to ensure that AI-driven discoveries are both scientifically valid and clinically trustworthy.
+    </p>
+  </div>
+
+</div>
