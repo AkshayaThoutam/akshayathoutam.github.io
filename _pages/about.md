@@ -14,7 +14,7 @@ I co-organize the <a href="https://www.broadinstitute.org/talks/spring-2024/mia"
 </p>
 
 <p>
-Previously, I graduated from the <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a> as a College of Sciences Dean's Scholar and Early Research Award recipient. My advisors have included <a href="https://ggibsongt.wixsite.com/gibsongatech/people" target="_blank">Greg Gibson</a>, <a href="https://hooshmandlab.dreamhosters.com/?page_id=507" target="_blank">Nasrin Hooshmand</a>, <a href="https://www.cedars-sinai.edu/health-sciences-university/research/labs/knott.html" target="_blank">Simon Knott</a>, and <a href="https://www.broadinstitute.org/bios/joshua-levin" target="_blank">Joshua Levin</a>.
+Previously, I graduated from the <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a> as a College of Sciences Dean's Scholar and Early Research Award recipient. Past advisors include <a href="https://ggibsongt.wixsite.com/gibsongatech/people" target="_blank">Greg Gibson</a>, <a href="https://hooshmandlab.dreamhosters.com/?page_id=507" target="_blank">Nasrin Hooshmand</a>, <a href="https://www.cedars-sinai.edu/health-sciences-university/research/labs/knott.html" target="_blank">Simon Knott</a>, and <a href="https://www.broadinstitute.org/bios/joshua-levin" target="_blank">Joshua Levin</a>.
 </p>
 
 <h2 class="selected-publications-title" style="margin-top: 100px;">Selected Publications († = equal contribution)</h2>
