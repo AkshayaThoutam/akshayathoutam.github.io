@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: archive
 title: "Research Themes"
 permalink: /research-themes/
 author_profile: true
@@ -34,15 +34,14 @@ author_profile: true
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Click target */
-.theme-open {
+/* Make the whole card clickable */
+.theme-link {
   display: block;
-  width: 100%;
-  cursor: pointer;
   text-decoration: none !important;
   color: inherit !important;
 }
 
+/* Restore "big" image sizing */
 .theme-image {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -71,7 +70,8 @@ author_profile: true
   line-height: 1.5;
 }
 
-/* ===== Modal ===== */
+/* ===== CSS-only Modal (no JS) ===== */
+/* Overlay container is hidden by default */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -83,17 +83,28 @@ author_profile: true
   z-index: 9999;
 }
 
-.modal-overlay.is-open {
+/* When navigated to via #hash, show it */
+.modal-overlay:target {
   display: flex;
 }
 
+/* Clickable backdrop to close (link back to page) */
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* Modal panel */
 .modal {
+  position: relative;
   width: min(900px, 100%);
   background: var(--global-bg-color, #fff);
   border-radius: 14px;
   border: 1px solid var(--global-border-color, rgba(0,0,0,0.12));
   box-shadow: 0 18px 50px rgba(0,0,0,0.22);
   overflow: hidden;
+  z-index: 1;
 }
 
 .modal-header {
@@ -130,6 +141,7 @@ author_profile: true
   cursor: pointer;
   color: var(--global-text-color, #444);
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .modal-close:hover {
@@ -176,56 +188,57 @@ author_profile: true
 <div class="research-grid">
 
   <div class="theme-card">
-    <a href="#modal-repr" class="theme-open" data-modal="modal-repr" aria-haspopup="dialog" aria-controls="modal-repr">
+    <a class="theme-link" href="#modal-repr" aria-haspopup="dialog" aria-controls="modal-repr">
       <img class="theme-image" src="/assets/images/themes/representations.png" alt="Learning biologically meaningful representations">
+      <div class="theme-meta">
+        <h3 class="theme-title">Learning Biologically Meaningful Representations</h3>
+        <p class="theme-keywords">Foundation models, representation learning, large-scale transcriptomic embeddings</p>
+      </div>
     </a>
-    <div class="theme-meta">
-      <h3 class="theme-title">Learning Biologically Meaningful Representations</h3>
-      <p class="theme-keywords">Foundation models, representation learning, large-scale transcriptomic embeddings</p>
-    </div>
   </div>
 
   <div class="theme-card">
-    <a href="#modal-causal" class="theme-open" data-modal="modal-causal" aria-haspopup="dialog" aria-controls="modal-causal">
+    <a class="theme-link" href="#modal-causal" aria-haspopup="dialog" aria-controls="modal-causal">
       <img class="theme-image" src="/assets/images/themes/causal.png" alt="Causal modeling of disease programs">
+      <div class="theme-meta">
+        <h3 class="theme-title">Causal Modeling of Disease Programs</h3>
+        <p class="theme-keywords">Causal inference, perturbation analysis, counterfactual reasoning, structural modeling, identifiability</p>
+      </div>
     </a>
-    <div class="theme-meta">
-      <h3 class="theme-title">Causal Modeling of Disease Programs</h3>
-      <p class="theme-keywords">Causal inference, perturbation analysis, counterfactual reasoning, structural modeling, identifiability</p>
-    </div>
   </div>
 
   <div class="theme-card">
-    <a href="#modal-nano" class="theme-open" data-modal="modal-nano" aria-haspopup="dialog" aria-controls="modal-nano">
+    <a class="theme-link" href="#modal-nano" aria-haspopup="dialog" aria-controls="modal-nano">
       <img class="theme-image" src="/assets/images/themes/nanoplasmonics.png" alt="Biophysics of nanoplasmonics">
+      <div class="theme-meta">
+        <h3 class="theme-title">Biophysics of Nanoplasmonics</h3>
+        <p class="theme-keywords">Nanotechnology, biophysics, and physical principles of biological systems</p>
+      </div>
     </a>
-    <div class="theme-meta">
-      <h3 class="theme-title">Biophysics of Nanoplasmonics</h3>
-      <p class="theme-keywords">Nanotechnology, biophysics, and physical principles of biological systems</p>
-    </div>
   </div>
 
   <div class="theme-card">
-    <a href="#modal-clin" class="theme-open" data-modal="modal-clin" aria-haspopup="dialog" aria-controls="modal-clin">
+    <a class="theme-link" href="#modal-clin" aria-haspopup="dialog" aria-controls="modal-clin">
       <img class="theme-image" src="/assets/images/themes/clinical-ai.png" alt="Clinical translation and responsible AI">
+      <div class="theme-meta">
+        <h3 class="theme-title">Clinical Translation and Responsible AI</h3>
+        <p class="theme-keywords">Bioethics, responsible AI, societal impact of ML in healthcare</p>
+      </div>
     </a>
-    <div class="theme-meta">
-      <h3 class="theme-title">Clinical Translation and Responsible AI</h3>
-      <p class="theme-keywords">Bioethics, responsible AI, societal impact of ML in healthcare</p>
-    </div>
   </div>
 
 </div>
 
-<!-- ===== Modals ===== -->
+<!-- ===== Modals (CSS :target) ===== -->
 <div class="modal-overlay" id="modal-repr" role="dialog" aria-modal="true" aria-label="Learning Biologically Meaningful Representations">
+  <a class="modal-backdrop" href="#!" aria-label="Close"></a>
   <div class="modal" role="document">
     <div class="modal-header">
       <div class="modal-title-wrap">
         <h3>Learning Biologically Meaningful Representations</h3>
         <p>Foundation models, representation learning, large-scale transcriptomic embeddings</p>
       </div>
-      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <a class="modal-close" href="#!" aria-label="Close">&times;</a>
     </div>
     <div class="modal-body">
       <p>
@@ -238,13 +251,14 @@ author_profile: true
 </div>
 
 <div class="modal-overlay" id="modal-causal" role="dialog" aria-modal="true" aria-label="Causal Modeling of Disease Programs">
+  <a class="modal-backdrop" href="#!" aria-label="Close"></a>
   <div class="modal" role="document">
     <div class="modal-header">
       <div class="modal-title-wrap">
         <h3>Causal Modeling of Disease Programs</h3>
         <p>Causal inference, perturbation analysis, counterfactual reasoning, structural modeling, identifiability</p>
       </div>
-      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <a class="modal-close" href="#!" aria-label="Close">&times;</a>
     </div>
     <div class="modal-body">
       <p>
@@ -257,13 +271,14 @@ author_profile: true
 </div>
 
 <div class="modal-overlay" id="modal-nano" role="dialog" aria-modal="true" aria-label="Biophysics of Nanoplasmonics">
+  <a class="modal-backdrop" href="#!" aria-label="Close"></a>
   <div class="modal" role="document">
     <div class="modal-header">
       <div class="modal-title-wrap">
         <h3>Biophysics of Nanoplasmonics</h3>
         <p>Nanotechnology, biophysics, and physical principles of biological systems</p>
       </div>
-      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <a class="modal-close" href="#!" aria-label="Close">&times;</a>
     </div>
     <div class="modal-body">
       <p>
@@ -276,13 +291,14 @@ author_profile: true
 </div>
 
 <div class="modal-overlay" id="modal-clin" role="dialog" aria-modal="true" aria-label="Clinical Translation and Responsible AI">
+  <a class="modal-backdrop" href="#!" aria-label="Close"></a>
   <div class="modal" role="document">
     <div class="modal-header">
       <div class="modal-title-wrap">
         <h3>Clinical Translation and Responsible AI</h3>
         <p>Bioethics, responsible AI, societal impact of ML in healthcare</p>
       </div>
-      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <a class="modal-close" href="#!" aria-label="Close">&times;</a>
     </div>
     <div class="modal-body">
       <p>
@@ -319,70 +335,3 @@ author_profile: true
     </div>
   </div>
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  let activeModal = null;
-  let lastFocusEl = null;
-
-  function openModal(modalId, triggerEl) {
-    const modal = document.getElementById(modalId);
-    if (!modal) return;
-
-    lastFocusEl = triggerEl || document.activeElement;
-    activeModal = modal;
-    modal.classList.add("is-open");
-
-    // focus close button
-    const closeBtn = modal.querySelector(".modal-close");
-    if (closeBtn) closeBtn.focus();
-
-    // prevent background scroll
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeModal(modal) {
-    if (!modal) return;
-    modal.classList.remove("is-open");
-    activeModal = null;
-
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
-
-    if (lastFocusEl && typeof lastFocusEl.focus === "function") {
-      lastFocusEl.focus();
-    }
-  }
-
-  // Open (event delegation)
-  document.addEventListener("click", function (e) {
-    const opener = e.target.closest(".theme-open");
-    if (!opener) return;
-
-    e.preventDefault(); // prevent #hash jump
-    const modalId = opener.getAttribute("data-modal");
-    openModal(modalId, opener);
-  });
-
-  // Close: X button
-  document.addEventListener("click", function (e) {
-    if (e.target.matches(".modal-close")) {
-      const overlay = e.target.closest(".modal-overlay");
-      closeModal(overlay);
-    }
-  });
-
-  // Close: click outside modal content
-  document.querySelectorAll(".modal-overlay").forEach((overlay) => {
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) closeModal(overlay);
-    });
-  });
-
-  // Close: ESC to close
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && activeModal) closeModal(activeModal);
-  });
-});
-</script>
