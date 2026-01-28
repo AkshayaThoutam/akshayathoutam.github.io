@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: archive
 permalink: /year-archive/
 title: "Research Themes"
@@ -133,4 +133,419 @@ author_profile: true
     </div>
   </div>
 
+</div> -->
+
+---
+layout: archive
+permalink: /year-archive/
+title: "Research Themes"
+author_profile: true
+---
+
+<style>
+/* ===== Grid cards ===== */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.theme-card {
+  background: var(--global-bg-color, #fff);
+  border: 1px solid var(--global-border-color, rgba(0,0,0,0.1));
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.theme-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.theme-card button {
+  all: unset;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.theme-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: rgba(0,0,0,0.03);
+}
+
+.theme-meta {
+  padding: 16px 18px 18px 18px;
+}
+
+.theme-title {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--global-text-color, #333);
+}
+
+.theme-keywords {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--global-text-color, #666);
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+}
+
+.modal {
+  width: min(900px, 100%);
+  background: var(--global-bg-color, #fff);
+  border-radius: 14px;
+  border: 1px solid var(--global-border-color, rgba(0,0,0,0.12));
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 10px 18px;
+  border-bottom: 1px solid var(--global-border-color, rgba(0,0,0,0.08));
+}
+
+.modal-title-wrap h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--global-text-color, #333);
+}
+
+.modal-title-wrap p {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--global-text-color, #666);
+  opacity: 0.75;
+}
+
+.modal-close {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: var(--global-text-color, #444);
+  border-radius: 10px;
+}
+
+.modal-close:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.modal-body {
+  padding: 16px 18px 18px 18px;
+}
+
+.modal-body p {
+  margin: 0 0 14px 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--global-text-color, #555);
+}
+
+.modal-section {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--global-border-color, rgba(0,0,0,0.08));
+}
+
+.modal-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--global-text-color, #555);
+}
+
+.modal-section ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.modal-section li {
+  margin-bottom: 4px;
+}
+</style>
+
+<!-- ===== Cards (2x2) ===== -->
+<div class="research-grid">
+
+  <div class="theme-card">
+    <button type="button"
+      class="theme-open"
+      data-modal="modal-repr"
+      aria-haspopup="dialog"
+      aria-controls="modal-repr">
+      <img
+        class="theme-image"
+        src="/assets/images/themes/representations.png"
+        alt="Learning biologically meaningful representations">
+      <div class="theme-meta">
+        <h3 class="theme-title">Learning Biologically Meaningful Representations</h3>
+        <p class="theme-keywords">Foundation models, representation learning, large-scale transcriptomic embeddings</p>
+      </div>
+    </button>
+  </div>
+
+  <div class="theme-card">
+    <button type="button"
+      class="theme-open"
+      data-modal="modal-causal"
+      aria-haspopup="dialog"
+      aria-controls="modal-causal">
+      <img
+        class="theme-image"
+        src="/assets/images/themes/causal.png"
+        alt="Causal modeling of disease programs">
+      <div class="theme-meta">
+        <h3 class="theme-title">Causal Modeling of Disease Programs</h3>
+        <p class="theme-keywords">Causal inference, perturbation analysis, counterfactual reasoning, structural modeling, identifiability</p>
+      </div>
+    </button>
+  </div>
+
+  <div class="theme-card">
+    <button type="button"
+      class="theme-open"
+      data-modal="modal-nano"
+      aria-haspopup="dialog"
+      aria-controls="modal-nano">
+      <img
+        class="theme-image"
+        src="/assets/images/themes/nanoplasmonics.png"
+        alt="Biophysics of nanoplasmonics">
+      <div class="theme-meta">
+        <h3 class="theme-title">Biophysics of Nanoplasmonics</h3>
+        <p class="theme-keywords">Nanotechnology, biophysics, and physical principles of biological systems</p>
+      </div>
+    </button>
+  </div>
+
+  <div class="theme-card">
+    <button type="button"
+      class="theme-open"
+      data-modal="modal-clin"
+      aria-haspopup="dialog"
+      aria-controls="modal-clin">
+      <img
+        class="theme-image"
+        src="/assets/images/themes/clinical-ai.png"
+        alt="Clinical translation and responsible AI">
+      <div class="theme-meta">
+        <h3 class="theme-title">Clinical Translation and Responsible AI</h3>
+        <p class="theme-keywords">Bioethics, responsible AI, societal impact of ML in healthcare</p>
+      </div>
+    </button>
+  </div>
+
 </div>
+
+<!-- ===== Modals ===== -->
+<div class="modal-overlay" id="modal-repr" role="dialog" aria-modal="true" aria-label="Learning Biologically Meaningful Representations">
+  <div class="modal" role="document">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <h3>Learning Biologically Meaningful Representations</h3>
+        <p>Foundation models, representation learning, large-scale transcriptomic embeddings</p>
+      </div>
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Machine learning methods are increasingly used to model complex biological systems, particularly in the analysis of large and multimodal datasets.
+        However, models that achieve strong predictive performance do not always learn representations that are biologically meaningful or interpretable.
+        I develop models that learn representations reflecting both accurate prediction and deeper biological understanding.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-causal" role="dialog" aria-modal="true" aria-label="Causal Modeling of Disease Programs">
+  <div class="modal" role="document">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <h3>Causal Modeling of Disease Programs</h3>
+        <p>Causal inference, perturbation analysis, counterfactual reasoning, structural modeling, identifiability</p>
+      </div>
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Transcriptomic analyses of disease are typically dominated by correlational patterns that do not resolve causal structure.
+        Causal modeling frameworks enable identification of molecular drivers rather than downstream consequences.
+        I apply these methods to disentangle causal mechanisms underlying cell states and disease progression from confounded or spurious associations.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-nano" role="dialog" aria-modal="true" aria-label="Biophysics of Nanoplasmonics">
+  <div class="modal" role="document">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <h3>Biophysics of Nanoplasmonics</h3>
+        <p>Nanotechnology, biophysics, and physical principles of biological systems</p>
+      </div>
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Biological systems are governed not only by molecular interactions but also by fundamental physical principles operating at the nanoscale.
+        I use nanotechnology and biophysical modeling to understand how physical properties—size, structure, and force—shape molecular organization and behavior.
+        By studying nanoparticles as engineered probes of biological systems, this work connects physical design with biological function.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-clin" role="dialog" aria-modal="true" aria-label="Clinical Translation and Responsible AI">
+  <div class="modal" role="document">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <h3>Clinical Translation and Responsible AI</h3>
+        <p>Bioethics, responsible AI, societal impact of ML in healthcare</p>
+      </div>
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        The integration of machine learning into clinical research introduces ethical challenges that extend beyond technical performance,
+        including concerns around bias, transparency, patient representation, and downstream impact on medical decision-making.
+        I focus on embedding principles of responsible AI and bioethics into the design and evaluation of computational models for biomedical research.
+        Aligning methodological rigor with ethical accountability ensures that AI-driven discoveries are both scientifically valid and clinically trustworthy.
+      </p>
+
+      <div class="modal-section">
+        <h4>Clinical Experience</h4>
+        <p style="font-size: 13px; margin: 0 0 10px 0; color: var(--global-text-color, #555);">
+          My clinical experiences shape how I approach AI and machine learning by grounding my technical work in biological and clinical reality.
+        </p>
+
+        <h4>Shadowing</h4>
+        <ul>
+          <li><strong>Pediatric Pathology</strong> — Boston Children's Hospital (60 hours)</li>
+          <li><strong>Pediatric Hematology/Oncology</strong> — Boston Children's Hospital (8 hours)</li>
+          <li><strong>Neurosurgery</strong> — Atlanta VA Medical Center (80 hours)</li>
+          <li><strong>Pediatrics</strong> — All Pediatrics Tampa (100 hours)</li>
+          <li><strong>Sarcoma Oncology</strong> — Moffitt Cancer Center (40 hours)</li>
+          <li><strong>Thoracic Surgery</strong> — Moffitt Cancer Center (40 hours)</li>
+        </ul>
+
+        <h4 style="margin-top: 12px;">Volunteering</h4>
+        <ul>
+          <li><strong>Emergency Department</strong> — Massachusetts General Hospital (74 hours)</li>
+          <li><strong>Arts in Medicine Program</strong> — Emory Winship Cancer Center (150 hours)</li>
+          <li><strong>Care Package Initiative</strong> — AdventHealth Florida (100 hours)</li>
+          <li><strong>Recycling Initiative</strong> — Cedars-Sinai Hospital (200 hours)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  let activeModal = null;
+  let lastFocusEl = null;
+
+  function openModal(modalId, triggerEl) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    lastFocusEl = triggerEl || document.activeElement;
+    activeModal = modal;
+    modal.classList.add("is-open");
+
+    // focus close button
+    const closeBtn = modal.querySelector(".modal-close");
+    if (closeBtn) closeBtn.focus();
+
+    // prevent background scroll
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    activeModal = null;
+
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+
+    if (lastFocusEl && typeof lastFocusEl.focus === "function") {
+      lastFocusEl.focus();
+    }
+  }
+
+  // open handlers
+  document.querySelectorAll(".theme-open").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modalId = btn.getAttribute("data-modal");
+      openModal(modalId, btn);
+    });
+  });
+
+  // close handlers: X button
+  document.querySelectorAll(".modal-overlay .modal-close").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const overlay = e.target.closest(".modal-overlay");
+      closeModal(overlay);
+    });
+  });
+
+  // close handlers: click outside modal content
+  document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeModal(overlay);
+    });
+  });
+
+  // ESC to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeModal) {
+      closeModal(activeModal);
+    }
+  });
+})();
+</script>
