@@ -57,10 +57,10 @@
 
 main:
 
-  - title: "Publications and Preprints"
+  - title: "Publications"
     url: /publications/
 
-  - title: "Clinical Experience"
+  - title: "Talks and Teaching"
     url: /portfolio/
 
   - title: "Research Themes"
