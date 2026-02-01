@@ -34,43 +34,37 @@ author_profile: true
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Whole card is clickable */
 .theme-link {
   display: block;
   text-decoration: none !important;
   color: inherit !important;
 }
 
-/* Big image sizing */
 .theme-image {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
-  background: rgba(0,0,0,0.03);
 }
 
 .theme-meta {
-  padding: 16px 18px 18px 18px;
+  padding: 16px 18px 18px;
 }
 
 .theme-title {
   margin: 0 0 6px 0;
   font-size: 16px;
   font-weight: 650;
-  color: var(--global-text-color, #333);
 }
 
 .theme-keywords {
   margin: 0;
   font-size: 12px;
   font-style: italic;
-  color: var(--global-text-color, #666);
   opacity: 0.75;
-  line-height: 1.5;
 }
 
-/* ===== Modal (CSS-only, namespaced) ===== */
+/* ===== Modal ===== */
 .rt-modal-overlay {
   position: fixed;
   inset: 0;
@@ -89,118 +83,63 @@ author_profile: true
 .rt-modal-backdrop {
   position: absolute;
   inset: 0;
-  display: block;
 }
 
 .rt-modal {
   position: relative;
   width: min(900px, 100%);
-  background: var(--global-bg-color, #fff);
+  background: #fff;
   border-radius: 14px;
-  border: 1px solid var(--global-border-color, rgba(0,0,0,0.12));
   box-shadow: 0 18px 50px rgba(0,0,0,0.22);
-  overflow: hidden;
-  z-index: 1;
-  display: block;
   max-height: calc(100vh - 64px);
+  overflow: hidden;
 }
 
 .rt-modal-body {
-  overflow: auto;
   max-height: calc(100vh - 160px);
+  overflow: auto;
 }
 
 .rt-modal-header {
+  padding: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  padding: 18px 18px 10px 18px;
-  border-bottom: 1px solid var(--global-border-color, rgba(0,0,0,0.08));
 }
 
 .rt-modal-title-wrap h3 {
-  margin: 0 0 4px 0;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--global-text-color, #333);
+  margin: 0 0 4px;
 }
 
 .rt-modal-title-wrap p {
   margin: 0;
   font-size: 12px;
   font-style: italic;
-  color: var(--global-text-color, #666);
   opacity: 0.75;
 }
 
 .rt-modal-close {
-  appearance: none;
-  border: 0;
-  background: transparent;
   font-size: 22px;
-  line-height: 1;
-  padding: 6px 8px;
-  cursor: pointer;
-  color: var(--global-text-color, #444);
-  border-radius: 10px;
-  text-decoration: none !important;
-}
-
-.rt-modal-close:hover {
-  background: rgba(0,0,0,0.06);
+  text-decoration: none;
 }
 
 .rt-modal-content {
-  padding: 16px 18px 18px 18px;
-}
-
-.rt-modal-content p {
-  margin: 0 0 14px 0;
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--global-text-color, #555);
+  padding: 18px;
 }
 
 .rt-modal-section {
-  margin-top: 16px;
+  margin-top: 20px;
   padding-top: 14px;
-  border-top: 1px solid var(--global-border-color, rgba(0,0,0,0.08));
-}
-
-.rt-modal-section h4 {
-  margin: 0 0 8px 0;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--global-text-color, #555);
-}
-
-.rt-modal-section ul {
-  margin: 0;
-  padding-left: 18px;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.rt-modal-section li {
-  margin-bottom: 4px;
-}
-
-/* Publications list spacing inside modal (uses same archive styling) */
-.rt-modal-section .entries-list {
-  margin-top: 10px;
-}
-.rt-modal-section .list__item {
-  margin-bottom: 10px;
+  border-top: 1px solid rgba(0,0,0,0.08);
 }
 </style>
 
-<!-- ===== Cards (2x2) ===== -->
+<!-- ===== Grid ===== -->
 <div class="research-grid">
 
   <div class="theme-card">
-    <a class="theme-link" href="#modal-repr" aria-haspopup="dialog" aria-controls="modal-repr">
-      <img class="theme-image" src="/assets/images/themes/representations.png" alt="Learning biologically meaningful representations">
+    <a class="theme-link" href="#modal-repr">
+      <img class="theme-image" src="/assets/images/themes/representations.png">
       <div class="theme-meta">
         <h3 class="theme-title">Learning Biologically Meaningful Representations</h3>
         <p class="theme-keywords">Foundation models, representation learning, large-scale transcriptomic embeddings</p>
@@ -209,75 +148,90 @@ author_profile: true
   </div>
 
   <div class="theme-card">
-    <a class="theme-link" href="#modal-causal" aria-haspopup="dialog" aria-controls="modal-causal">
-      <img class="theme-image" src="/assets/images/themes/causal.png" alt="Causal modeling of disease programs">
+    <a class="theme-link" href="#modal-causal">
+      <img class="theme-image" src="/assets/images/themes/causal.png">
       <div class="theme-meta">
         <h3 class="theme-title">Causal Modeling of Disease Programs</h3>
-        <p class="theme-keywords">Causal inference, perturbation analysis, counterfactual reasoning, structural modeling, identifiability</p>
+        <p class="theme-keywords">Causal inference, perturbation analysis, counterfactual reasoning</p>
       </div>
     </a>
   </div>
 
   <div class="theme-card">
-    <a class="theme-link" href="#modal-nano" aria-haspopup="dialog" aria-controls="modal-nano">
-      <img class="theme-image" src="/assets/images/themes/nanoplasmonics.png" alt="Biophysics of nanoplasmonics">
+    <a class="theme-link" href="#modal-nano">
+      <img class="theme-image" src="/assets/images/themes/nanoplasmonics.png">
       <div class="theme-meta">
         <h3 class="theme-title">Biophysics of Nanoplasmonics</h3>
-        <p class="theme-keywords">Nanotechnology, biophysics, and physical principles of biological systems</p>
+        <p class="theme-keywords">Nanotechnology, biophysics, physical principles</p>
       </div>
     </a>
   </div>
 
   <div class="theme-card">
-    <a class="theme-link" href="#modal-clin" aria-haspopup="dialog" aria-controls="modal-clin">
-      <img class="theme-image" src="/assets/images/themes/clinical-ai.png" alt="Clinical translation and responsible AI">
+    <a class="theme-link" href="#modal-clin">
+      <img class="theme-image" src="/assets/images/themes/clinical-ai.png">
       <div class="theme-meta">
         <h3 class="theme-title">Clinical Translation and Responsible AI</h3>
-        <p class="theme-keywords">Bioethics, responsible AI, societal impact of ML in healthcare</p>
+        <p class="theme-keywords">Bioethics, responsible AI, ML in healthcare</p>
       </div>
     </a>
   </div>
 
 </div>
 
-<!-- ===== Modals ===== -->
-<div class="rt-modal-overlay" id="modal-repr" role="dialog" aria-modal="true" aria-label="Learning Biologically Meaningful Representations">
-  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
-  <div class="rt-modal" role="document">
+<!-- ===== MODALS ===== -->
+
+{% assign theme_defs = 
+  "repr:representations,
+   causal:causal,
+   nano:nanoplasmonics,
+   clin:clinical" | split: "," %}
+
+{% for t in theme_defs %}
+{% assign pair = t | split: ":" %}
+{% assign id = pair[0] %}
+{% assign key = pair[1] %}
+
+<div class="rt-modal-overlay" id="modal-{{ id }}">
+  <a class="rt-modal-backdrop" href="#close"></a>
+  <div class="rt-modal">
     <div class="rt-modal-header">
       <div class="rt-modal-title-wrap">
-        <h3>Learning Biologically Meaningful Representations</h3>
-        <p>Foundation models, representation learning, large-scale transcriptomic embeddings</p>
+        <h3>
+          {% if id == "repr" %}Learning Biologically Meaningful Representations{% endif %}
+          {% if id == "causal" %}Causal Modeling of Disease Programs{% endif %}
+          {% if id == "nano" %}Biophysics of Nanoplasmonics{% endif %}
+          {% if id == "clin" %}Clinical Translation and Responsible AI{% endif %}
+        </h3>
+        <p>{{ key }}</p>
       </div>
-      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
+      <a class="rt-modal-close" href="#close">&times;</a>
     </div>
+
     <div class="rt-modal-body">
       <div class="rt-modal-content">
-        <p>
-          Machine learning methods are increasingly used to model complex biological systems, particularly in the analysis of large and multimodal datasets.
-          However, models that achieve strong predictive performance do not always learn representations that are biologically meaningful or interpretable.
-          I develop models that learn representations reflecting both accurate prediction and deeper biological understanding.
-        </p>
 
         <div class="rt-modal-section">
           <h4>Selected Publications</h4>
 
           {% assign theme_pubs = site.publications
-            | where_exp: "p", "p.themes contains 'representations'"
+            | where_exp: "p", "p.themes contains key"
+            | where: "selected", true
             | sort: "date"
             | reverse %}
 
-          {% if theme_pubs and theme_pubs.size > 0 %}
-            <div class="entries-list">
-              {% for post in theme_pubs %}
+          {% if theme_pubs.size > 0 %}
+            <div class="selected-publications">
+              {% for pub in theme_pubs %}
                 {% include publication-item.html p=pub %}
               {% endfor %}
             </div>
           {% else %}
-            <p style="font-size: 13px; margin: 0; color: var(--global-text-color, #555);">
-              Add <code>themes: [representations]</code> to publications you want to show here.
+            <p style="font-size:13px; opacity:0.7;">
+              No publications tagged for this theme yet.
             </p>
           {% endif %}
+
         </div>
 
       </div>
@@ -285,163 +239,6 @@ author_profile: true
   </div>
 </div>
 
-<div class="rt-modal-overlay" id="modal-causal" role="dialog" aria-modal="true" aria-label="Causal Modeling of Disease Programs">
-  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
-  <div class="rt-modal" role="document">
-    <div class="rt-modal-header">
-      <div class="rt-modal-title-wrap">
-        <h3>Causal Modeling of Disease Programs</h3>
-        <p>Causal inference, perturbation analysis, counterfactual reasoning, structural modeling, identifiability</p>
-      </div>
-      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
-    </div>
-    <div class="rt-modal-body">
-      <div class="rt-modal-content">
-        <p>
-          Transcriptomic analyses of disease are typically dominated by correlational patterns that do not resolve causal structure.
-          Causal modeling frameworks enable identification of molecular drivers rather than downstream consequences.
-          I apply these methods to disentangle causal mechanisms underlying cell states and disease progression from confounded or spurious associations.
-        </p>
+{% endfor %}
 
-        <div class="rt-modal-section">
-          <h4>Selected Publications</h4>
-
-          {% assign theme_pubs = site.publications
-            | where_exp: "p", "p.themes contains 'causal'"
-            | sort: "date"
-            | reverse %}
-
-          {% if theme_pubs and theme_pubs.size > 0 %}
-            <div class="entries-list">
-              {% for post in theme_pubs %}
-                {% include publication-item.html p=pub %}
-              {% endfor %}
-            </div>
-          {% else %}
-            <p style="font-size: 13px; margin: 0; color: var(--global-text-color, #555);">
-              Add <code>themes: [causal]</code> to publications you want to show here.
-            </p>
-          {% endif %}
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="rt-modal-overlay" id="modal-nano" role="dialog" aria-modal="true" aria-label="Biophysics of Nanoplasmonics">
-  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
-  <div class="rt-modal" role="document">
-    <div class="rt-modal-header">
-      <div class="rt-modal-title-wrap">
-        <h3>Biophysics of Nanoplasmonics</h3>
-        <p>Nanotechnology, biophysics, and physical principles of biological systems</p>
-      </div>
-      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
-    </div>
-    <div class="rt-modal-body">
-      <div class="rt-modal-content">
-        <p>
-          Biological systems are governed not only by molecular interactions but also by fundamental physical principles operating at the nanoscale.
-          I use nanotechnology and biophysical modeling to understand how physical properties—size, structure, and force—shape molecular organization and behavior.
-          By studying nanoparticles as engineered probes of biological systems, this work connects physical design with biological function.
-        </p>
-
-        <div class="rt-modal-section">
-          <h4>Selected Publications</h4>
-
-          {% assign theme_pubs = site.publications
-            | where_exp: "p", "p.themes contains 'nanoplasmonics'"
-            | sort: "date"
-            | reverse %}
-
-          {% if theme_pubs and theme_pubs.size > 0 %}
-            <div class="entries-list">
-              {% for post in theme_pubs %}
-                {% include publication-item.html p=pub %}
-              {% endfor %}
-            </div>
-          {% else %}
-            <p style="font-size: 13px; margin: 0; color: var(--global-text-color, #555);">
-              Add <code>themes: [nanoplasmonics]</code> to publications you want to show here.
-            </p>
-          {% endif %}
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="rt-modal-overlay" id="modal-clin" role="dialog" aria-modal="true" aria-label="Clinical Translation and Responsible AI">
-  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
-  <div class="rt-modal" role="document">
-    <div class="rt-modal-header">
-      <div class="rt-modal-title-wrap">
-        <h3>Clinical Translation and Responsible AI</h3>
-        <p>Bioethics, responsible AI, societal impact of ML in healthcare</p>
-      </div>
-      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
-    </div>
-    <div class="rt-modal-body">
-      <div class="rt-modal-content">
-        <p>
-          The integration of machine learning into clinical research introduces ethical challenges that extend beyond technical performance,
-          including concerns around bias, transparency, patient representation, and downstream impact on medical decision-making.
-          I focus on embedding principles of responsible AI and bioethics into the design and evaluation of computational models for biomedical research.
-          Aligning methodological rigor with ethical accountability ensures that AI-driven discoveries are both scientifically valid and clinically trustworthy.
-        </p>
-
-        <div class="rt-modal-section">
-          <h4>Clinical Experience</h4>
-          <p style="font-size: 13px; margin: 0 0 10px 0; color: var(--global-text-color, #555);">
-            My clinical experiences shape how I approach AI and machine learning by grounding my technical work in biological and clinical reality.
-          </p>
-
-          <h4>Shadowing</h4>
-          <ul>
-            <li><strong>Pediatric Pathology</strong> — Boston Children's Hospital (60 hours)</li>
-            <li><strong>Pediatric Hematology/Oncology</strong> — Boston Children's Hospital (8 hours)</li>
-            <li><strong>Neurosurgery</strong> — Atlanta VA Medical Center (80 hours)</li>
-            <li><strong>Pediatrics</strong> — All Pediatrics Tampa (100 hours)</li>
-            <li><strong>Sarcoma Oncology</strong> — Moffitt Cancer Center (40 hours)</li>
-            <li><strong>Thoracic Surgery</strong> — Moffitt Cancer Center (40 hours)</li>
-          </ul>
-
-          <h4 style="margin-top: 12px;">Volunteering</h4>
-          <ul>
-            <li><strong>Emergency Department</strong> — Massachusetts General Hospital (74 hours)</li>
-            <li><strong>Arts in Medicine Program</strong> — Emory Winship Cancer Center (150 hours)</li>
-            <li><strong>Care Package Initiative</strong> — AdventHealth Florida (100 hours)</li>
-            <li><strong>Recycling Initiative</strong> — Cedars-Sinai Hospital (200 hours)</li>
-          </ul>
-        </div>
-
-        <div class="rt-modal-section">
-          <h4>Selected Publications</h4>
-
-          {% assign theme_pubs = site.publications
-            | where_exp: "p", "p.themes contains 'clinical'"
-            | sort: "date"
-            | reverse %}
-
-          {% if theme_pubs and theme_pubs.size > 0 %}
-            <div class="entries-list">
-              {% for post in theme_pubs %}
-                {% include publication-item.html p=pub %}
-              {% endfor %}
-            </div>
-          {% else %}
-            <p style="font-size: 13px; margin: 0; color: var(--global-text-color, #555);">
-              Add <code>themes: [clinical]</code> to publications you want to show here.
-            </p>
-          {% endif %}
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Dummy anchor to close :target modals -->
 <div id="close"></div>
