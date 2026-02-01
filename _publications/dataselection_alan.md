@@ -13,6 +13,7 @@ paper_button_label: "bioRxiv"
 biorxiv: "https://www.biorxiv.org/content/10.1101/2024.12.13.628448v1"
 abstract: "Short abstract text..."
 selected: true
+themes: [representations]
 ---
 
 The success of transformer-based foundation models on natural language and images has motivated their use in single-cell biology. Single-cell foundation models have been trained on increasingly larger transcriptomic datasets, scaling from initial studies with 1 million cells to newer atlases with over 100 million cells. This study investigates the role of pre-training dataset size and diversity on the performance of single-cell foundation models on both zero-shot and fine-tuned tasks. Using a large corpus of 22.2 million cells, we pre-train a total of 375 models which we evaluate by conducting 3,750 experiments. Our results show that current methods tend to plateau in performance with pre-training datasets that are only a fraction of the size.

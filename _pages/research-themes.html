@@ -41,7 +41,7 @@ author_profile: true
   color: inherit !important;
 }
 
-/* Big image sizing (same as before) */
+/* Big image sizing */
 .theme-image {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -70,7 +70,7 @@ author_profile: true
   line-height: 1.5;
 }
 
-/* ===== Modal (CSS-only, namespaced to avoid theme conflicts) ===== */
+/* ===== Modal (CSS-only, namespaced) ===== */
 .rt-modal-overlay {
   position: fixed;
   inset: 0;
@@ -79,22 +79,19 @@ author_profile: true
   align-items: center;
   justify-content: center;
   padding: 18px;
-  z-index: 99999; /* higher to beat theme layers */
+  z-index: 99999;
 }
 
-/* show overlay when targeted */
 .rt-modal-overlay:target {
   display: flex;
 }
 
-/* backdrop link to close */
 .rt-modal-backdrop {
   position: absolute;
   inset: 0;
   display: block;
 }
 
-/* modal panel */
 .rt-modal {
   position: relative;
   width: min(900px, 100%);
@@ -104,11 +101,10 @@ author_profile: true
   box-shadow: 0 18px 50px rgba(0,0,0,0.22);
   overflow: hidden;
   z-index: 1;
-  display: block; /* defensive against theme rules */
+  display: block;
   max-height: calc(100vh - 64px);
 }
 
-/* scroll content if needed */
 .rt-modal-body {
   overflow: auto;
   max-height: calc(100vh - 160px);
@@ -189,6 +185,14 @@ author_profile: true
 .rt-modal-section li {
   margin-bottom: 4px;
 }
+
+/* Publications list spacing inside modal (uses same archive styling) */
+.rt-modal-section .entries-list {
+  margin-top: 10px;
+}
+.rt-modal-section .list__item {
+  margin-bottom: 10px;
+}
 </style>
 
 <!-- ===== Cards (2x2) ===== -->
@@ -236,7 +240,7 @@ author_profile: true
 
 </div>
 
-<!-- ===== Modals (CSS :target) ===== -->
+<!-- ===== Modals ===== -->
 <div class="rt-modal-overlay" id="modal-repr" role="dialog" aria-modal="true" aria-label="Learning Biologically Meaningful Representations">
   <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
   <div class="rt-modal" role="document">
@@ -254,6 +258,28 @@ author_profile: true
           However, models that achieve strong predictive performance do not always learn representations that are biologically meaningful or interpretable.
           I develop models that learn representations reflecting both accurate prediction and deeper biological understanding.
         </p>
+
+        <div class="rt-modal-section">
+          <h4>Selected Publications</h4>
+
+          {% assign theme_pubs = site.publications
+            | where_exp: "p", "p.themes contains 'representations'"
+            | sort: "date"
+            | reverse %}
+
+          {% if theme_pubs and theme_pubs.size > 0 %}
+            <div class="entries-list">
+              {% for post in theme_pubs %}
+                {% include archive-single.html type="list" %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <p style="font-size: 13px; margin: 0; color: var(--global-text-color, #555);">
+              Add <code>themes: [representations]</code> to publications you want to show here.
+            </p>
+          {% endif %}
+        </div>
+
       </div>
     </div>
   </div>
@@ -276,6 +302,28 @@ author_profile: true
           Causal modeling frameworks enable identification of molecular drivers rather than downstream consequences.
           I apply these methods to disentangle causal mechanisms underlying cell states and disease progression from confounded or spurious associations.
         </p>
+
+        <div class="rt-modal-section">
+          <h4>Selected Publications</h4>
+
+          {% assign theme_pubs = site.publications
+            | where_exp: "p", "p.themes contains 'causal'"
+            | sort: "date"
+            | reverse %}
+
+          {% if theme_pubs and theme_pubs.size > 0 %}
+            <div class="entries-list">
+              {% for post in theme_pubs %}
+                {% include archive-single.html type="list" %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <p style="font-size: 13px; margin: 0; color: var(--global-text-color, #555);">
+              Add <code>themes: [causal]</code> to publications you want to show here.
+            </p>
+          {% endif %}
+        </div>
+
       </div>
     </div>
   </div>
@@ -298,6 +346,28 @@ author_profile: true
           I use nanotechnology and biophysical modeling to understand how physical properties—size, structure, and force—shape molecular organization and behavior.
           By studying nanoparticles as engineered probes of biological systems, this work connects physical design with biological function.
         </p>
+
+        <div class="rt-modal-section">
+          <h4>Selected Publications</h4>
+
+          {% assign theme_pubs = site.publications
+            | where_exp: "p", "p.themes contains 'nanoplasmonics'"
+            | sort: "date"
+            | reverse %}
+
+          {% if theme_pubs and theme_pubs.size > 0 %}
+            <div class="entries-list">
+              {% for post in theme_pubs %}
+                {% include archive-single.html type="list" %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <p style="font-size: 13px; margin: 0; color: var(--global-text-color, #555);">
+              Add <code>themes: [nanoplasmonics]</code> to publications you want to show here.
+            </p>
+          {% endif %}
+        </div>
+
       </div>
     </div>
   </div>
@@ -346,6 +416,28 @@ author_profile: true
             <li><strong>Recycling Initiative</strong> — Cedars-Sinai Hospital (200 hours)</li>
           </ul>
         </div>
+
+        <div class="rt-modal-section">
+          <h4>Selected Publications</h4>
+
+          {% assign theme_pubs = site.publications
+            | where_exp: "p", "p.themes contains 'clinical'"
+            | sort: "date"
+            | reverse %}
+
+          {% if theme_pubs and theme_pubs.size > 0 %}
+            <div class="entries-list">
+              {% for post in theme_pubs %}
+                {% include archive-single.html type="list" %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <p style="font-size: 13px; margin: 0; color: var(--global-text-color, #555);">
+              Add <code>themes: [clinical]</code> to publications you want to show here.
+            </p>
+          {% endif %}
+        </div>
+
       </div>
     </div>
   </div>
