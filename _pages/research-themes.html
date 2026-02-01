@@ -34,14 +34,14 @@ author_profile: true
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Make the whole card clickable */
+/* Whole card is clickable */
 .theme-link {
   display: block;
   text-decoration: none !important;
   color: inherit !important;
 }
 
-/* Restore "big" image sizing */
+/* Big image sizing (same as before) */
 .theme-image {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -70,9 +70,8 @@ author_profile: true
   line-height: 1.5;
 }
 
-/* ===== CSS-only Modal (no JS) ===== */
-/* Overlay container is hidden by default */
-.modal-overlay {
+/* ===== Modal (CSS-only, namespaced to avoid theme conflicts) ===== */
+.rt-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.55);
@@ -80,23 +79,23 @@ author_profile: true
   align-items: center;
   justify-content: center;
   padding: 18px;
-  z-index: 9999;
+  z-index: 99999; /* higher to beat theme layers */
 }
 
-/* When navigated to via #hash, show it */
-.modal-overlay:target {
+/* show overlay when targeted */
+.rt-modal-overlay:target {
   display: flex;
 }
 
-/* Clickable backdrop to close (link back to page) */
-.modal-backdrop {
+/* backdrop link to close */
+.rt-modal-backdrop {
   position: absolute;
   inset: 0;
   display: block;
 }
 
-/* Modal panel */
-.modal {
+/* modal panel */
+.rt-modal {
   position: relative;
   width: min(900px, 100%);
   background: var(--global-bg-color, #fff);
@@ -105,9 +104,17 @@ author_profile: true
   box-shadow: 0 18px 50px rgba(0,0,0,0.22);
   overflow: hidden;
   z-index: 1;
+  display: block; /* defensive against theme rules */
+  max-height: calc(100vh - 64px);
 }
 
-.modal-header {
+/* scroll content if needed */
+.rt-modal-body {
+  overflow: auto;
+  max-height: calc(100vh - 160px);
+}
+
+.rt-modal-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -116,14 +123,14 @@ author_profile: true
   border-bottom: 1px solid var(--global-border-color, rgba(0,0,0,0.08));
 }
 
-.modal-title-wrap h3 {
+.rt-modal-title-wrap h3 {
   margin: 0 0 4px 0;
   font-size: 18px;
   font-weight: 700;
   color: var(--global-text-color, #333);
 }
 
-.modal-title-wrap p {
+.rt-modal-title-wrap p {
   margin: 0;
   font-size: 12px;
   font-style: italic;
@@ -131,7 +138,7 @@ author_profile: true
   opacity: 0.75;
 }
 
-.modal-close {
+.rt-modal-close {
   appearance: none;
   border: 0;
   background: transparent;
@@ -141,45 +148,45 @@ author_profile: true
   cursor: pointer;
   color: var(--global-text-color, #444);
   border-radius: 10px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-.modal-close:hover {
+.rt-modal-close:hover {
   background: rgba(0,0,0,0.06);
 }
 
-.modal-body {
+.rt-modal-content {
   padding: 16px 18px 18px 18px;
 }
 
-.modal-body p {
+.rt-modal-content p {
   margin: 0 0 14px 0;
   font-size: 14px;
   line-height: 1.75;
   color: var(--global-text-color, #555);
 }
 
-.modal-section {
+.rt-modal-section {
   margin-top: 16px;
   padding-top: 14px;
   border-top: 1px solid var(--global-border-color, rgba(0,0,0,0.08));
 }
 
-.modal-section h4 {
+.rt-modal-section h4 {
   margin: 0 0 8px 0;
   font-size: 14px;
   font-weight: 700;
   color: var(--global-text-color, #555);
 }
 
-.modal-section ul {
+.rt-modal-section ul {
   margin: 0;
   padding-left: 18px;
   font-size: 13px;
   line-height: 1.6;
 }
 
-.modal-section li {
+.rt-modal-section li {
   margin-bottom: 4px;
 }
 </style>
@@ -230,108 +237,119 @@ author_profile: true
 </div>
 
 <!-- ===== Modals (CSS :target) ===== -->
-<div class="modal-overlay" id="modal-repr" role="dialog" aria-modal="true" aria-label="Learning Biologically Meaningful Representations">
-  <a class="modal-backdrop" href="#!" aria-label="Close"></a>
-  <div class="modal" role="document">
-    <div class="modal-header">
-      <div class="modal-title-wrap">
+<div class="rt-modal-overlay" id="modal-repr" role="dialog" aria-modal="true" aria-label="Learning Biologically Meaningful Representations">
+  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
+  <div class="rt-modal" role="document">
+    <div class="rt-modal-header">
+      <div class="rt-modal-title-wrap">
         <h3>Learning Biologically Meaningful Representations</h3>
         <p>Foundation models, representation learning, large-scale transcriptomic embeddings</p>
       </div>
-      <a class="modal-close" href="#!" aria-label="Close">&times;</a>
+      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
-    <div class="modal-body">
-      <p>
-        Machine learning methods are increasingly used to model complex biological systems, particularly in the analysis of large and multimodal datasets.
-        However, models that achieve strong predictive performance do not always learn representations that are biologically meaningful or interpretable.
-        I develop models that learn representations reflecting both accurate prediction and deeper biological understanding.
-      </p>
+    <div class="rt-modal-body">
+      <div class="rt-modal-content">
+        <p>
+          Machine learning methods are increasingly used to model complex biological systems, particularly in the analysis of large and multimodal datasets.
+          However, models that achieve strong predictive performance do not always learn representations that are biologically meaningful or interpretable.
+          I develop models that learn representations reflecting both accurate prediction and deeper biological understanding.
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-causal" role="dialog" aria-modal="true" aria-label="Causal Modeling of Disease Programs">
-  <a class="modal-backdrop" href="#!" aria-label="Close"></a>
-  <div class="modal" role="document">
-    <div class="modal-header">
-      <div class="modal-title-wrap">
+<div class="rt-modal-overlay" id="modal-causal" role="dialog" aria-modal="true" aria-label="Causal Modeling of Disease Programs">
+  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
+  <div class="rt-modal" role="document">
+    <div class="rt-modal-header">
+      <div class="rt-modal-title-wrap">
         <h3>Causal Modeling of Disease Programs</h3>
         <p>Causal inference, perturbation analysis, counterfactual reasoning, structural modeling, identifiability</p>
       </div>
-      <a class="modal-close" href="#!" aria-label="Close">&times;</a>
+      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
-    <div class="modal-body">
-      <p>
-        Transcriptomic analyses of disease are typically dominated by correlational patterns that do not resolve causal structure.
-        Causal modeling frameworks enable identification of molecular drivers rather than downstream consequences.
-        I apply these methods to disentangle causal mechanisms underlying cell states and disease progression from confounded or spurious associations.
-      </p>
+    <div class="rt-modal-body">
+      <div class="rt-modal-content">
+        <p>
+          Transcriptomic analyses of disease are typically dominated by correlational patterns that do not resolve causal structure.
+          Causal modeling frameworks enable identification of molecular drivers rather than downstream consequences.
+          I apply these methods to disentangle causal mechanisms underlying cell states and disease progression from confounded or spurious associations.
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-nano" role="dialog" aria-modal="true" aria-label="Biophysics of Nanoplasmonics">
-  <a class="modal-backdrop" href="#!" aria-label="Close"></a>
-  <div class="modal" role="document">
-    <div class="modal-header">
-      <div class="modal-title-wrap">
+<div class="rt-modal-overlay" id="modal-nano" role="dialog" aria-modal="true" aria-label="Biophysics of Nanoplasmonics">
+  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
+  <div class="rt-modal" role="document">
+    <div class="rt-modal-header">
+      <div class="rt-modal-title-wrap">
         <h3>Biophysics of Nanoplasmonics</h3>
         <p>Nanotechnology, biophysics, and physical principles of biological systems</p>
       </div>
-      <a class="modal-close" href="#!" aria-label="Close">&times;</a>
+      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
-    <div class="modal-body">
-      <p>
-        Biological systems are governed not only by molecular interactions but also by fundamental physical principles operating at the nanoscale.
-        I use nanotechnology and biophysical modeling to understand how physical properties—size, structure, and force—shape molecular organization and behavior.
-        By studying nanoparticles as engineered probes of biological systems, this work connects physical design with biological function.
-      </p>
+    <div class="rt-modal-body">
+      <div class="rt-modal-content">
+        <p>
+          Biological systems are governed not only by molecular interactions but also by fundamental physical principles operating at the nanoscale.
+          I use nanotechnology and biophysical modeling to understand how physical properties—size, structure, and force—shape molecular organization and behavior.
+          By studying nanoparticles as engineered probes of biological systems, this work connects physical design with biological function.
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-clin" role="dialog" aria-modal="true" aria-label="Clinical Translation and Responsible AI">
-  <a class="modal-backdrop" href="#!" aria-label="Close"></a>
-  <div class="modal" role="document">
-    <div class="modal-header">
-      <div class="modal-title-wrap">
+<div class="rt-modal-overlay" id="modal-clin" role="dialog" aria-modal="true" aria-label="Clinical Translation and Responsible AI">
+  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
+  <div class="rt-modal" role="document">
+    <div class="rt-modal-header">
+      <div class="rt-modal-title-wrap">
         <h3>Clinical Translation and Responsible AI</h3>
         <p>Bioethics, responsible AI, societal impact of ML in healthcare</p>
       </div>
-      <a class="modal-close" href="#!" aria-label="Close">&times;</a>
+      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
-    <div class="modal-body">
-      <p>
-        The integration of machine learning into clinical research introduces ethical challenges that extend beyond technical performance,
-        including concerns around bias, transparency, patient representation, and downstream impact on medical decision-making.
-        I focus on embedding principles of responsible AI and bioethics into the design and evaluation of computational models for biomedical research.
-        Aligning methodological rigor with ethical accountability ensures that AI-driven discoveries are both scientifically valid and clinically trustworthy.
-      </p>
-
-      <div class="modal-section">
-        <h4>Clinical Experience</h4>
-        <p style="font-size: 13px; margin: 0 0 10px 0; color: var(--global-text-color, #555);">
-          My clinical experiences shape how I approach AI and machine learning by grounding my technical work in biological and clinical reality.
+    <div class="rt-modal-body">
+      <div class="rt-modal-content">
+        <p>
+          The integration of machine learning into clinical research introduces ethical challenges that extend beyond technical performance,
+          including concerns around bias, transparency, patient representation, and downstream impact on medical decision-making.
+          I focus on embedding principles of responsible AI and bioethics into the design and evaluation of computational models for biomedical research.
+          Aligning methodological rigor with ethical accountability ensures that AI-driven discoveries are both scientifically valid and clinically trustworthy.
         </p>
 
-        <h4>Shadowing</h4>
-        <ul>
-          <li><strong>Pediatric Pathology</strong> — Boston Children's Hospital (60 hours)</li>
-          <li><strong>Pediatric Hematology/Oncology</strong> — Boston Children's Hospital (8 hours)</li>
-          <li><strong>Neurosurgery</strong> — Atlanta VA Medical Center (80 hours)</li>
-          <li><strong>Pediatrics</strong> — All Pediatrics Tampa (100 hours)</li>
-          <li><strong>Sarcoma Oncology</strong> — Moffitt Cancer Center (40 hours)</li>
-          <li><strong>Thoracic Surgery</strong> — Moffitt Cancer Center (40 hours)</li>
-        </ul>
+        <div class="rt-modal-section">
+          <h4>Clinical Experience</h4>
+          <p style="font-size: 13px; margin: 0 0 10px 0; color: var(--global-text-color, #555);">
+            My clinical experiences shape how I approach AI and machine learning by grounding my technical work in biological and clinical reality.
+          </p>
 
-        <h4 style="margin-top: 12px;">Volunteering</h4>
-        <ul>
-          <li><strong>Emergency Department</strong> — Massachusetts General Hospital (74 hours)</li>
-          <li><strong>Arts in Medicine Program</strong> — Emory Winship Cancer Center (150 hours)</li>
-          <li><strong>Care Package Initiative</strong> — AdventHealth Florida (100 hours)</li>
-          <li><strong>Recycling Initiative</strong> — Cedars-Sinai Hospital (200 hours)</li>
-        </ul>
+          <h4>Shadowing</h4>
+          <ul>
+            <li><strong>Pediatric Pathology</strong> — Boston Children's Hospital (60 hours)</li>
+            <li><strong>Pediatric Hematology/Oncology</strong> — Boston Children's Hospital (8 hours)</li>
+            <li><strong>Neurosurgery</strong> — Atlanta VA Medical Center (80 hours)</li>
+            <li><strong>Pediatrics</strong> — All Pediatrics Tampa (100 hours)</li>
+            <li><strong>Sarcoma Oncology</strong> — Moffitt Cancer Center (40 hours)</li>
+            <li><strong>Thoracic Surgery</strong> — Moffitt Cancer Center (40 hours)</li>
+          </ul>
+
+          <h4 style="margin-top: 12px;">Volunteering</h4>
+          <ul>
+            <li><strong>Emergency Department</strong> — Massachusetts General Hospital (74 hours)</li>
+            <li><strong>Arts in Medicine Program</strong> — Emory Winship Cancer Center (150 hours)</li>
+            <li><strong>Care Package Initiative</strong> — AdventHealth Florida (100 hours)</li>
+            <li><strong>Recycling Initiative</strong> — Cedars-Sinai Hospital (200 hours)</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Dummy anchor to close :target modals -->
+<div id="close"></div>
