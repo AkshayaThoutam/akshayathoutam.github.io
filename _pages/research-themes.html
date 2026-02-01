@@ -36,8 +36,8 @@ author_profile: true
 
 .theme-link {
   display: block;
+  color: inherit;
   text-decoration: none !important;
-  color: inherit !important;
 }
 
 .theme-image {
@@ -52,13 +52,12 @@ author_profile: true
 }
 
 .theme-title {
-  margin: 0 0 6px 0;
+  margin: 0 0 6px;
   font-size: 16px;
   font-weight: 650;
 }
 
 .theme-keywords {
-  margin: 0;
   font-size: 12px;
   font-style: italic;
   opacity: 0.75;
@@ -72,7 +71,7 @@ author_profile: true
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 18px;
+  padding: 20px;
   z-index: 99999;
 }
 
@@ -90,25 +89,22 @@ author_profile: true
   width: min(900px, 100%);
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
-  max-height: calc(100vh - 64px);
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+  max-height: calc(100vh - 80px);
   overflow: hidden;
 }
 
-.rt-modal-body {
-  max-height: calc(100vh - 160px);
-  overflow: auto;
-}
-
 .rt-modal-header {
-  padding: 18px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
   display: flex;
   justify-content: space-between;
+  padding: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .rt-modal-title-wrap h3 {
   margin: 0 0 4px;
+  font-size: 18px;
 }
 
 .rt-modal-title-wrap p {
@@ -121,10 +117,22 @@ author_profile: true
 .rt-modal-close {
   font-size: 22px;
   text-decoration: none;
+  padding: 4px 8px;
+}
+
+.rt-modal-body {
+  overflow-y: auto;
+  max-height: calc(100vh - 180px);
 }
 
 .rt-modal-content {
   padding: 18px;
+}
+
+.rt-modal-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 14px;
 }
 
 .rt-modal-section {
@@ -134,7 +142,7 @@ author_profile: true
 }
 </style>
 
-<!-- ===== Grid ===== -->
+<!-- ===== Cards ===== -->
 <div class="research-grid">
 
   <div class="theme-card">
@@ -172,7 +180,7 @@ author_profile: true
       <img class="theme-image" src="/assets/images/themes/clinical-ai.png">
       <div class="theme-meta">
         <h3 class="theme-title">Clinical Translation and Responsible AI</h3>
-        <p class="theme-keywords">Bioethics, responsible AI, ML in healthcare</p>
+        <p class="theme-keywords">Bioethics, responsible AI, clinical ML</p>
       </div>
     </a>
   </div>
@@ -181,64 +189,163 @@ author_profile: true
 
 <!-- ===== MODALS ===== -->
 
-{% assign theme_defs = 
-  "repr:representations,
-   causal:causal,
-   nano:nanoplasmonics,
-   clin:clinical" | split: "," %}
-
-{% for t in theme_defs %}
-{% assign pair = t | split: ":" %}
-{% assign id = pair[0] %}
-{% assign key = pair[1] %}
-
-<div class="rt-modal-overlay" id="modal-{{ id }}">
+<!-- REPRESENTATIONS -->
+<div class="rt-modal-overlay" id="modal-repr">
   <a class="rt-modal-backdrop" href="#close"></a>
   <div class="rt-modal">
     <div class="rt-modal-header">
       <div class="rt-modal-title-wrap">
-        <h3>
-          {% if id == "repr" %}Learning Biologically Meaningful Representations{% endif %}
-          {% if id == "causal" %}Causal Modeling of Disease Programs{% endif %}
-          {% if id == "nano" %}Biophysics of Nanoplasmonics{% endif %}
-          {% if id == "clin" %}Clinical Translation and Responsible AI{% endif %}
-        </h3>
-        <p>{{ key }}</p>
+        <h3>Learning Biologically Meaningful Representations</h3>
+        <p>representations</p>
       </div>
       <a class="rt-modal-close" href="#close">&times;</a>
     </div>
-
     <div class="rt-modal-body">
       <div class="rt-modal-content">
+
+        <p>
+          Machine learning methods are increasingly used to model complex biological systems,
+          particularly in the analysis of large and multimodal datasets. However, models that
+          achieve strong predictive performance do not always learn representations that are
+          biologically meaningful or interpretable.
+        </p>
 
         <div class="rt-modal-section">
           <h4>Selected Publications</h4>
 
           {% assign theme_pubs = site.publications
-            | where_exp: "p", "p.themes contains key"
-            | where: "selected", true
+            | where_exp: "p", "p.themes contains 'representations'"
             | sort: "date"
             | reverse %}
 
-          {% if theme_pubs.size > 0 %}
-            <div class="selected-publications">
-              {% for pub in theme_pubs %}
-                {% include publication-item.html p=pub %}
-              {% endfor %}
-            </div>
-          {% else %}
-            <p style="font-size:13px; opacity:0.7;">
-              No publications tagged for this theme yet.
-            </p>
-          {% endif %}
+          <div class="entries-list">
+            {% for pub in theme_pubs %}
+              {% include publication-item.html p=pub %}
+            {% endfor %}
+          </div>
 
         </div>
-
       </div>
     </div>
   </div>
 </div>
 
-{% endfor %}
+<!-- CAUSAL -->
+<div class="rt-modal-overlay" id="modal-causal">
+  <a class="rt-modal-backdrop" href="#close"></a>
+  <div class="rt-modal">
+    <div class="rt-modal-header">
+      <div class="rt-modal-title-wrap">
+        <h3>Causal Modeling of Disease Programs</h3>
+        <p>causal</p>
+      </div>
+      <a class="rt-modal-close" href="#close">&times;</a>
+    </div>
+    <div class="rt-modal-body">
+      <div class="rt-modal-content">
+
+        <p>
+          Transcriptomic analyses of disease are often dominated by correlational patterns.
+          Causal modeling frameworks enable identification of molecular drivers rather than
+          downstream consequences.
+        </p>
+
+        <div class="rt-modal-section">
+          <h4>Selected Publications</h4>
+
+          {% assign theme_pubs = site.publications
+            | where_exp: "p", "p.themes contains 'causal'"
+            | sort: "date"
+            | reverse %}
+
+          <div class="entries-list">
+            {% for pub in theme_pubs %}
+              {% include publication-item.html p=pub %}
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NANO -->
+<div class="rt-modal-overlay" id="modal-nano">
+  <a class="rt-modal-backdrop" href="#close"></a>
+  <div class="rt-modal">
+    <div class="rt-modal-header">
+      <div class="rt-modal-title-wrap">
+        <h3>Biophysics of Nanoplasmonics</h3>
+        <p>nanoplasmonics</p>
+      </div>
+      <a class="rt-modal-close" href="#close">&times;</a>
+    </div>
+    <div class="rt-modal-body">
+      <div class="rt-modal-content">
+
+        <p>
+          Biological systems are governed by physical principles operating at the nanoscale.
+          Nanotechnology provides engineered probes for interrogating these mechanisms.
+        </p>
+
+        <div class="rt-modal-section">
+          <h4>Selected Publications</h4>
+
+          {% assign theme_pubs = site.publications
+            | where_exp: "p", "p.themes contains 'nanoplasmonics'"
+            | sort: "date"
+            | reverse %}
+
+          <div class="entries-list">
+            {% for pub in theme_pubs %}
+              {% include publication-item.html p=pub %}
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLINICAL -->
+<div class="rt-modal-overlay" id="modal-clin">
+  <a class="rt-modal-backdrop" href="#close"></a>
+  <div class="rt-modal">
+    <div class="rt-modal-header">
+      <div class="rt-modal-title-wrap">
+        <h3>Clinical Translation and Responsible AI</h3>
+        <p>clinical</p>
+      </div>
+      <a class="rt-modal-close" href="#close">&times;</a>
+    </div>
+    <div class="rt-modal-body">
+      <div class="rt-modal-content">
+
+        <p>
+          Integrating machine learning into clinical research requires methodological rigor
+          alongside ethical accountability and patient-centered evaluation.
+        </p>
+
+        <div class="rt-modal-section">
+          <h4>Selected Publications</h4>
+
+          {% assign theme_pubs = site.publications
+            | where_exp: "p", "p.themes contains 'clinical'"
+            | sort: "date"
+            | reverse %}
+
+          <div class="entries-list">
+            {% for pub in theme_pubs %}
+              {% include publication-item.html p=pub %}
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="close"></div>
