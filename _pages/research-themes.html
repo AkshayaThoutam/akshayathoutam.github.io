@@ -132,7 +132,7 @@ author_profile: true
   background: rgba(0,0,0,0.06);
 }
 
-/* ---- REVERTED: keep scroll simple (the version that was mostly working) ---- */
+/* ---- keep scroll simple ---- */
 .rt-modal-body {
   overflow-y: auto;
   max-height: calc(100vh - 180px);
@@ -143,8 +143,7 @@ author_profile: true
   box-sizing: border-box;
 }
 
-/* Consistent “breathing room” at the bottom WITHOUT changing layout:
-   add an actual spacer element we can control */
+/* bottom breathing room */
 .rt-modal-spacer {
   height: 36px;
 }
@@ -167,9 +166,32 @@ author_profile: true
   margin-top: 10px;
 }
 
-/* ===== Clinical: make only the BOLDED role names blue ===== */
-#modal-clin .rt-modal-content ul li strong {
-  color: #2ba0ff;
+/* ===== Clinical: make list text match paragraph size + color ===== */
+#modal-clin .rt-modal-content ul,
+#modal-clin .rt-modal-content li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--global-text-color, #555);
+}
+
+#modal-clin .rt-modal-content ul {
+  margin: 8px 0 0 0;     /* avoid big default margins */
+  padding-left: 18px;   /* keep bullets aligned nicely */
+}
+
+#modal-clin .rt-modal-content li {
+  margin: 0 0 8px 0;    /* consistent spacing between bullets */
+}
+
+#modal-clin .rt-modal-content li strong {
+  color: inherit;       /* IMPORTANT: no blue, inherit normal grey */
+  font-weight: 700;     /* keep bold emphasis */
+}
+
+/* If your theme injects link styles into strong or list items, prevent weird underlines */
+#modal-clin .rt-modal-content ul a,
+#modal-clin .rt-modal-content ul a:hover {
+  text-decoration: none !important;
 }
 </style>
 
@@ -285,7 +307,7 @@ author_profile: true
 
         <h4>Projects</h4>
         <p>
-          State Associated Drug Screening - ask me more about this if you are interested! 
+          State Associated Drug Screening - ask me more about this if you are interested!
         </p>
 
         <div class="rt-modal-section">
