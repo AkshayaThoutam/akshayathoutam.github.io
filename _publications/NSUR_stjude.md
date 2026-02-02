@@ -12,7 +12,6 @@ paperurl: "https://..."
 paper_button_label: "Poster"
 biorxiv: "https://drive.google.com/file/d/1yrX2tsdo3NzgLi1fsvVAzs-TN2wur-6s/view?usp=sharing"
 abstract: "Short abstract text..."
-themes: [causal]
 ---
 
 
