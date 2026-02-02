@@ -132,11 +132,11 @@ author_profile: true
   background: rgba(0,0,0,0.06);
 }
 
-/* ✅ Scroll container: single definition, includes bottom padding */
+/* Scroll container stays clean */
 .rt-modal-body {
   overflow-y: auto;
   max-height: calc(100vh - 180px);
-  padding: 0 0 40px 0; /* <-- consistent whitespace at bottom */
+  padding: 0;              /* IMPORTANT: no bottom padding here */
   box-sizing: border-box;
 }
 
@@ -152,15 +152,23 @@ author_profile: true
   color: var(--global-text-color, #555);
 }
 
+/* Content gets the extra breathing room */
+.rt-modal-content {
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* Guaranteed whitespace at end of scroll */
+.rt-modal-content::after {
+  content: "";
+  display: block;
+  height: 28px;            /* adjust this for more/less whitespace */
+}
+
 .rt-modal-section {
   margin-top: 20px;
   padding-top: 14px;
   border-top: 1px solid rgba(0,0,0,0.08);
-}
-
-/* ✅ Guaranteed "breathing room" even if the last element is tight */
-.rt-modal-spacer {
-  height: 28px;
 }
 
 /* Publications list spacing inside modal */
@@ -252,7 +260,6 @@ author_profile: true
           </div>
         </div>
 
-        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
@@ -294,7 +301,6 @@ author_profile: true
           </div>
         </div>
 
-        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
@@ -335,7 +341,7 @@ author_profile: true
           </div>
         </div>
 
-        <div class="rt-modal-spacer"></div>
+
       </div>
     </div>
   </div>
@@ -347,7 +353,7 @@ author_profile: true
   <div class="rt-modal" role="dialog" aria-modal="true" aria-label="Clinical Translation and Responsible AI">
     <div class="rt-modal-header">
       <div class="rt-modal-title-wrap">
-        <h3>Clinical Translation and Responsible AI</h3>
+        <h3>Clinical Translation and Responsible AI try</h3>
       </div>
       <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
@@ -398,7 +404,7 @@ author_profile: true
           </div>
         </div>
 
-        <div class="rt-modal-spacer"></div>
+
       </div>
     </div>
   </div>
