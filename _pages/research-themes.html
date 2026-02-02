@@ -29,15 +29,6 @@ author_profile: true
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-/* Ensure consistent whitespace at bottom of modal content */
-.rt-modal-body {
-  padding-bottom: 32px;   /* space after scroll content */
-}
-
-.rt-modal-content {
-  padding-bottom: 24px;   /* space after last section */
-}
-
 .theme-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
@@ -54,6 +45,7 @@ author_profile: true
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+  background: rgba(0,0,0,0.03);
 }
 
 .theme-meta {
@@ -64,12 +56,16 @@ author_profile: true
   margin: 0 0 6px;
   font-size: 16px;
   font-weight: 650;
+  color: var(--global-text-color, #333);
 }
 
 .theme-keywords {
+  margin: 0;
   font-size: 12px;
   font-style: italic;
   opacity: 0.75;
+  color: var(--global-text-color, #666);
+  line-height: 1.5;
 }
 
 /* ===== Modal ===== */
@@ -91,63 +87,85 @@ author_profile: true
 .rt-modal-backdrop {
   position: absolute;
   inset: 0;
+  display: block;
 }
 
 .rt-modal {
   position: relative;
   width: min(900px, 100%);
-  background: #fff;
+  background: var(--global-bg-color, #fff);
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.12);
   box-shadow: 0 18px 50px rgba(0,0,0,0.25);
   max-height: calc(100vh - 80px);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .rt-modal-header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
   padding: 18px;
   border-bottom: 1px solid rgba(0,0,0,0.08);
+  box-sizing: border-box;
 }
 
 .rt-modal-title-wrap h3 {
-  margin: 0 0 4px;
-  font-size: 18px;
-}
-
-.rt-modal-title-wrap p {
   margin: 0;
-  font-size: 12px;
-  font-style: italic;
-  opacity: 0.75;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--global-text-color, #333);
 }
 
 .rt-modal-close {
   font-size: 22px;
-  text-decoration: none;
+  line-height: 1;
+  text-decoration: none !important;
   padding: 4px 8px;
+  border-radius: 10px;
+  color: var(--global-text-color, #444);
 }
 
+.rt-modal-close:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+/* ✅ Scroll container: single definition, includes bottom padding */
 .rt-modal-body {
   overflow-y: auto;
   max-height: calc(100vh - 180px);
+  padding: 0 0 40px 0; /* <-- consistent whitespace at bottom */
+  box-sizing: border-box;
 }
 
 .rt-modal-content {
   padding: 18px;
+  box-sizing: border-box;
 }
 
 .rt-modal-content p {
   font-size: 14px;
   line-height: 1.7;
-  margin-bottom: 14px;
+  margin: 0 0 14px 0;
+  color: var(--global-text-color, #555);
 }
 
 .rt-modal-section {
   margin-top: 20px;
   padding-top: 14px;
   border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ✅ Guaranteed "breathing room" even if the last element is tight */
+.rt-modal-spacer {
+  height: 28px;
+}
+
+/* Publications list spacing inside modal */
+.rt-modal-section .entries-list {
+  margin-top: 10px;
 }
 </style>
 
@@ -156,7 +174,7 @@ author_profile: true
 
   <div class="theme-card">
     <a class="theme-link" href="#modal-repr">
-      <img class="theme-image" src="/assets/images/themes/representations.png">
+      <img class="theme-image" src="/assets/images/themes/representations.png" alt="Learning Biologically Meaningful Representations">
       <div class="theme-meta">
         <h3 class="theme-title">Learning Biologically Meaningful Representations</h3>
         <p class="theme-keywords">foundation models, representation learning, transcriptomics</p>
@@ -166,7 +184,7 @@ author_profile: true
 
   <div class="theme-card">
     <a class="theme-link" href="#modal-causal">
-      <img class="theme-image" src="/assets/images/themes/causal.png">
+      <img class="theme-image" src="/assets/images/themes/causal.png" alt="Causal Modeling of Disease Programs">
       <div class="theme-meta">
         <h3 class="theme-title">Causal Modeling of Disease Programs</h3>
         <p class="theme-keywords">causal inference, perturbation analysis, statistical association</p>
@@ -176,7 +194,7 @@ author_profile: true
 
   <div class="theme-card">
     <a class="theme-link" href="#modal-nano">
-      <img class="theme-image" src="/assets/images/themes/nanoplasmonics.png">
+      <img class="theme-image" src="/assets/images/themes/nanoplasmonics.png" alt="Biophysics of Nanoplasmonics">
       <div class="theme-meta">
         <h3 class="theme-title">Biophysics of Nanoplasmonics</h3>
         <p class="theme-keywords">nanoparticles, optical properties</p>
@@ -186,7 +204,7 @@ author_profile: true
 
   <div class="theme-card">
     <a class="theme-link" href="#modal-clin">
-      <img class="theme-image" src="/assets/images/themes/clinical-ai.png">
+      <img class="theme-image" src="/assets/images/themes/clinical-ai.png" alt="Clinical Translation and Responsible AI">
       <div class="theme-meta">
         <h3 class="theme-title">Clinical Translation and Responsible AI</h3>
         <p class="theme-keywords">bioethics, responsible AI, clinical ML</p>
@@ -200,17 +218,17 @@ author_profile: true
 
 <!-- REPRESENTATIONS -->
 <div class="rt-modal-overlay" id="modal-repr">
-  <a class="rt-modal-backdrop" href="#close"></a>
-  <div class="rt-modal">
+  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
+  <div class="rt-modal" role="dialog" aria-modal="true" aria-label="Learning Biologically Meaningful Representations">
     <div class="rt-modal-header">
       <div class="rt-modal-title-wrap">
         <h3>Learning Biologically Meaningful Representations</h3>
       </div>
-      <a class="rt-modal-close" href="#close">&times;</a>
+      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
+
     <div class="rt-modal-body">
       <div class="rt-modal-content">
-
         <p>
           Machine learning methods are increasingly used to model complex biological systems,
           particularly in the analysis of large and multimodal datasets. However, models that
@@ -232,8 +250,9 @@ author_profile: true
               {% include publication-item.html p=pub %}
             {% endfor %}
           </div>
-
         </div>
+
+        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
@@ -241,17 +260,17 @@ author_profile: true
 
 <!-- CAUSAL -->
 <div class="rt-modal-overlay" id="modal-causal">
-  <a class="rt-modal-backdrop" href="#close"></a>
-  <div class="rt-modal">
+  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
+  <div class="rt-modal" role="dialog" aria-modal="true" aria-label="Causal Modeling of Disease Programs">
     <div class="rt-modal-header">
       <div class="rt-modal-title-wrap">
         <h3>Causal Modeling of Disease Programs</h3>
       </div>
-      <a class="rt-modal-close" href="#close">&times;</a>
+      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
+
     <div class="rt-modal-body">
       <div class="rt-modal-content">
-
         <p>
           Transcriptomic analyses of disease are typically dominated by correlational patterns
           that do not resolve causal structure. Causal modeling frameworks enable identification
@@ -273,8 +292,9 @@ author_profile: true
               {% include publication-item.html p=pub %}
             {% endfor %}
           </div>
-
         </div>
+
+        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
@@ -282,17 +302,17 @@ author_profile: true
 
 <!-- NANO -->
 <div class="rt-modal-overlay" id="modal-nano">
-  <a class="rt-modal-backdrop" href="#close"></a>
-  <div class="rt-modal">
+  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
+  <div class="rt-modal" role="dialog" aria-modal="true" aria-label="Biophysics of Nanoplasmonics">
     <div class="rt-modal-header">
       <div class="rt-modal-title-wrap">
         <h3>Biophysics of Nanoplasmonics</h3>
       </div>
-      <a class="rt-modal-close" href="#close">&times;</a>
+      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
+
     <div class="rt-modal-body">
       <div class="rt-modal-content">
-
         <p>
           Biological systems are governed not only by molecular interactions but also by
           fundamental physical principles operating at the nanoscale. I use nanotechnology
@@ -313,8 +333,9 @@ author_profile: true
               {% include publication-item.html p=pub %}
             {% endfor %}
           </div>
-
         </div>
+
+        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
@@ -322,41 +343,44 @@ author_profile: true
 
 <!-- CLINICAL -->
 <div class="rt-modal-overlay" id="modal-clin">
-  <a class="rt-modal-backdrop" href="#close"></a>
-  <div class="rt-modal">
+  <a class="rt-modal-backdrop" href="#close" aria-label="Close"></a>
+  <div class="rt-modal" role="dialog" aria-modal="true" aria-label="Clinical Translation and Responsible AI">
     <div class="rt-modal-header">
       <div class="rt-modal-title-wrap">
         <h3>Clinical Translation and Responsible AI</h3>
       </div>
-      <a class="rt-modal-close" href="#close">&times;</a>
+      <a class="rt-modal-close" href="#close" aria-label="Close">&times;</a>
     </div>
+
     <div class="rt-modal-body">
       <div class="rt-modal-content">
-
         <p>
-          The integration of machine learning into clinical research introduces ethical challenges 
-          that extend beyond technical performance, including concerns around bias, transparency, 
-          patient representation, and downstream impact on medical decision-making. I focus on embedding principles of 
-          responsible AI and bioethics into the design and evaluation of computational models for biomedical research. 
-          Aligning methodological rigor with ethical accountability ensures that AI-driven discoveries are both scientifically 
+          The integration of machine learning into clinical research introduces ethical challenges
+          that extend beyond technical performance, including concerns around bias, transparency,
+          patient representation, and downstream impact on medical decision-making. I focus on embedding principles of
+          responsible AI and bioethics into the design and evaluation of computational models for biomedical research.
+          Aligning methodological rigor with ethical accountability ensures that AI-driven discoveries are both scientifically
           sound and clinically trustworthy.
         </p>
 
-        <div class="rt-modal-section"> 
-          <p style="font-size: 13px; margin: 0 0 10px 0; color: var(--global-text-color, #555);"> 
-          </p> <h4>Shadowing</h4> 
-          <ul> <li><strong>Pediatric Pathology</strong> — 
-            Boston Children's Hospital (60 hours)</li> 
+        <div class="rt-modal-section">
+          <h4>Shadowing</h4>
+          <ul>
+            <li><strong>Pediatric Pathology</strong> — Boston Children's Hospital (60 hours)</li>
             <li><strong>Pediatric Hematology/Oncology</strong> — Boston Children's Hospital (8 hours)</li>
             <li><strong>Neurosurgery</strong> — Atlanta VA Medical Center (80 hours)</li>
-            <li><strong>Pediatrics</strong> — All Pediatrics Tampa (100 hours)</li> 
-            <li><strong>Sarcoma Oncology</strong> — Moffitt Cancer Center (40 hours)</li> 
-            <li><strong>Thoracic Surgery</strong> — Moffitt Cancer Center (40 hours)</li></ul> 
-          <h4 style="margin-top: 12px;">Volunteering</h4> <ul> 
-            <li><strong>Emergency Department</strong> — Massachusetts General Hospital (74 hours)</li> 
-            <li><strong>Arts in Medicine Program</strong> — Emory Winship Cancer Center (150 hours)</li> 
-            <li><strong>Care Package Initiative</strong> — AdventHealth Florida (100 hours)</li> 
-            <li><strong>Recycling Initiative</strong> — Cedars-Sinai Hospital (200 hours)</li> </ul> 
+            <li><strong>Pediatrics</strong> — All Pediatrics Tampa (100 hours)</li>
+            <li><strong>Sarcoma Oncology</strong> — Moffitt Cancer Center (40 hours)</li>
+            <li><strong>Thoracic Surgery</strong> — Moffitt Cancer Center (40 hours)</li>
+          </ul>
+
+          <h4 style="margin-top: 12px;">Volunteering</h4>
+          <ul>
+            <li><strong>Emergency Department</strong> — Massachusetts General Hospital (74 hours)</li>
+            <li><strong>Arts in Medicine Program</strong> — Emory Winship Cancer Center (150 hours)</li>
+            <li><strong>Care Package Initiative</strong> — AdventHealth Florida (100 hours)</li>
+            <li><strong>Recycling Initiative</strong> — Cedars-Sinai Hospital (200 hours)</li>
+          </ul>
         </div>
 
         <div class="rt-modal-section">
@@ -372,11 +396,13 @@ author_profile: true
               {% include publication-item.html p=pub %}
             {% endfor %}
           </div>
-
         </div>
+
+        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Dummy anchor to close :target modals -->
 <div id="close"></div>
