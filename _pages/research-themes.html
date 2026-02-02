@@ -29,6 +29,15 @@ author_profile: true
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
+/* Ensure consistent whitespace at bottom of modal content */
+.rt-modal-body {
+  padding-bottom: 32px;   /* space after scroll content */
+}
+
+.rt-modal-content {
+  padding-bottom: 24px;   /* space after last section */
+}
+
 .theme-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
