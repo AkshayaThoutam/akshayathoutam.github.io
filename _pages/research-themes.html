@@ -42,7 +42,7 @@ author_profile: true
 
 .theme-image {
   width: 100%;
-  aspect-ratio: 16 / 9; /* keeps the old big image height */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
   background: rgba(0,0,0,0.03);
@@ -132,19 +132,21 @@ author_profile: true
   background: rgba(0,0,0,0.06);
 }
 
-/* Scroll container */
+/* ---- REVERTED: keep scroll simple (the version that was mostly working) ---- */
 .rt-modal-body {
   overflow-y: auto;
   max-height: calc(100vh - 180px);
-  padding: 0;
-  box-sizing: border-box;
 }
 
 .rt-modal-content {
   padding: 18px;
   box-sizing: border-box;
-  /* helps with floated publication markup in some templates */
-  display: flow-root;
+}
+
+/* Consistent “breathing room” at the bottom WITHOUT changing layout:
+   add an actual spacer element we can control */
+.rt-modal-spacer {
+  height: 36px;
 }
 
 .rt-modal-content p {
@@ -152,14 +154,6 @@ author_profile: true
   line-height: 1.7;
   margin: 0 0 14px 0;
   color: var(--global-text-color, #555);
-}
-
-/* Guaranteed whitespace at end of scroll + clears floated pub items */
-.rt-modal-content::after {
-  content: "";
-  display: block;
-  clear: both;
-  height: 40px; /* adjust for more/less whitespace */
 }
 
 .rt-modal-section {
@@ -173,8 +167,8 @@ author_profile: true
   margin-top: 10px;
 }
 
-/* Make Clinical headings blue */
-.rt-clin-heading {
+/* ===== Clinical: make only the BOLDED role names blue ===== */
+#modal-clin .rt-modal-content ul li strong {
   color: #2ba0ff;
 }
 </style>
@@ -262,6 +256,7 @@ author_profile: true
           </div>
         </div>
 
+        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
@@ -303,6 +298,7 @@ author_profile: true
           </div>
         </div>
 
+        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
@@ -343,6 +339,7 @@ author_profile: true
           </div>
         </div>
 
+        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
@@ -371,7 +368,7 @@ author_profile: true
         </p>
 
         <div class="rt-modal-section">
-          <h4 class="rt-clin-heading">Shadowing</h4>
+          <h4>Shadowing</h4>
           <ul>
             <li><strong>Pediatric Pathology</strong> — Boston Children's Hospital (60 hours)</li>
             <li><strong>Pediatric Hematology/Oncology</strong> — Boston Children's Hospital (8 hours)</li>
@@ -381,7 +378,7 @@ author_profile: true
             <li><strong>Thoracic Surgery</strong> — Moffitt Cancer Center (40 hours)</li>
           </ul>
 
-          <h4 class="rt-clin-heading" style="margin-top: 12px;">Volunteering</h4>
+          <h4 style="margin-top: 12px;">Volunteering</h4>
           <ul>
             <li><strong>Emergency Department</strong> — Massachusetts General Hospital (74 hours)</li>
             <li><strong>Arts in Medicine Program</strong> — Emory Winship Cancer Center (150 hours)</li>
@@ -405,6 +402,7 @@ author_profile: true
           </div>
         </div>
 
+        <div class="rt-modal-spacer"></div>
       </div>
     </div>
   </div>
