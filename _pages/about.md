@@ -7,14 +7,14 @@ redirect_from:
   - /about.html
 ---
 
-Test - I am a Computational Associate II with the <a href="https://exvivo.broadinstitute.org/" target="_blank">Project Ex Vivo</a> group at Microsoft Research (advised by <a href="https://www.lorincrawford.com/" target="_blank">Lorin Crawford</a> and <a href="https://avaamini.com/" target="_blank">Ava Amini</a>) and the Broad Institute (advised by <a href="https://scholar.google.com/citations?user=WmBw-kkAAAAJ&hl=en&oi=ao" target="_blank">Peter Winter</a>). My research focuses on developing and using machine learning methods to define and engineer transcriptomic cell states. I am also a Master's student in the Clinical Research Program at <a href="https://hms.harvard.edu/education-admissions/masters-degree-programs/master-science-clinical-research" target="_blank">Harvard Medical School</a>.
+I am a Computational Associate II with the <a href="https://exvivo.broadinstitute.org/" target="_blank">Project Ex Vivo</a> group at Microsoft Research (advised by <a href="https://www.lorincrawford.com/" target="_blank">Lorin Crawford</a> and <a href="https://avaamini.com/" target="_blank">Ava Amini</a>) and the Broad Institute (advised by <a href="https://scholar.google.com/citations?user=WmBw-kkAAAAJ&hl=en&oi=ao" target="_blank">Peter Winter</a>). My research focuses on developing and using machine learning methods to define and engineer transcriptomic cell states. I am also interested in developing models that learn representations reflecting both accurate prediction and deeper biological understanding.
 
 <p>
 I co-organize the <a href="https://www.broadinstitute.org/talks/spring-2024/mia" target="_blank">Models, Inference & Algorithms (MIA)</a> seminar at the Broad.
 </p>
 
 <p>
-Previously, I graduated from the <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a> as a College of Sciences Dean's Scholar and Early Research Award recipient. Past advisors include <a href="https://ggibsongt.wixsite.com/gibsongatech/people" target="_blank">Greg Gibson</a>, <a href="https://hooshmandlab.dreamhosters.com/?page_id=507" target="_blank">Nasrin Hooshmand</a>, <a href="https://www.cedars-sinai.edu/health-sciences-university/research/labs/knott.html" target="_blank">Simon Knott</a>, and <a href="https://www.broadinstitute.org/bios/joshua-levin" target="_blank">Joshua Levin</a>.
+Previously, I graduated with my masters degree in Clinical Research Program at <a href="https://hms.harvard.edu/education-admissions/masters-degree-programs/master-science-clinical-research" target="_blank">Harvard Medical School</a>. I did my undergrad at <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a> as a College of Sciences Dean's Scholar and Early Research Award recipient. Past advisors include <a href="https://ggibsongt.wixsite.com/gibsongatech/people" target="_blank">Greg Gibson</a>, <a href="https://hooshmandlab.dreamhosters.com/?page_id=507" target="_blank">Nasrin Hooshmand</a>, <a href="https://www.cedars-sinai.edu/health-sciences-university/research/labs/knott.html" target="_blank">Simon Knott</a>, and <a href="https://www.broadinstitute.org/bios/joshua-levin" target="_blank">Joshua Levin</a>.
 </p>
 
 <h2 class="selected-publications-title" style="margin-top: 100px;">Selected Publications († = equal contribution)</h2>
