@@ -3,8 +3,8 @@ title: "Consequences of training data composition for deep learning models in si
 collection: publications
 category: manuscripts
 date: 2025-02-24
-venue: "Genome Biology"
-venue_short: "Genome Biology"
+venue: "Under peer review"
+venue_short: "bioRxiv"
 badge2: "Paper"
 badge2_style: "outline"
 authors: "Ajay Nadig†, Akshaya Thoutam†, Madeline Hughes, Anay Gupta, Andrew W. Navia, Nicolo Fusi, Srivatsan Raghavan, Peter S. Winter, Ava P. Amini, Lorin Crawford"
